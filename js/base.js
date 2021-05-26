@@ -9,7 +9,7 @@ function postfeed() {
     })
 }
 window.onscroll = function() {
-    if (document.documentElement.scrollTop > document.querySelector('.pageopt').offsetTop) {
+    if (document.documentElement.scrollTop > document.querySelectorAll('.pageopt')[1].offsetTop) {
         document.querySelector('.fixedtopbar').style.visibility = "visible";
     } else {
         document.querySelector('.fixedtopbar').style.visibility = "hidden";
