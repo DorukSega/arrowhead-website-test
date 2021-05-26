@@ -1,3 +1,12 @@
+function load() {
+    if (navigator.userAgent.indexOf('Trident/') > 0 || navigator.userAgent.indexOf('MSIE ') > 0) {
+        document.body.innerHTML = "";
+        var elem = document.createElement('h1');
+        elem.innerText = " Internet Explorer 🎉";
+        document.body.appendChild(elem);
+    }
+}
+
 function postfeed() {
     let parser = new RSSParser();
     parser.parseURL('http://' + window.location.hostname + ':4050/medium', function(err, feed) {
@@ -8,6 +17,7 @@ function postfeed() {
         })
     })
 }
+
 window.onscroll = function() {
     if (document.documentElement.scrollTop > document.querySelectorAll('.pageopt')[1].offsetTop) {
         document.querySelector('.fixedtopbar').style.visibility = "visible";
@@ -19,7 +29,6 @@ window.onscroll = function() {
 function zoomtoimg(source) {
     document.querySelector('.previmglarge').src = source;
     document.querySelector('.largimgcont').style.display = '';
-
 }
 
 function previmg(direction) {

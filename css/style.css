@@ -28,15 +28,9 @@
     width: 0.9vmin;
 }
 
-
-/* Track */
-
  ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0);
 }
-
-
-/* Handle */
 
  ::-webkit-scrollbar-thumb {
     background: var(--dred);
@@ -44,8 +38,8 @@
 }
 
 body {
+    scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-arrow-color: rgba(255, 255, 255, 0);
     color: var(--white);
     font-weight: 300;
     font-style: normal;
@@ -168,6 +162,7 @@ body {
     border-bottom: 0.04vmax solid rgba(255, 255, 255, 0.3);
     font-weight: 300;
     font-size: 2.1vmax;
+    text-transform: uppercase;
 }
 
 .option.selected {
@@ -251,17 +246,6 @@ body {
     justify-content: center;
     min-width: 100vw;
     height: 40vmin;
-}
-
-.topcont {
-    background-color: #BC252A60;
-}
-
-.midcont {
-    background-color: #16481580;
-}
-
-.botcont {
     background-color: #18181880;
 }
 
@@ -356,8 +340,6 @@ body {
 
 .previmglarge {
     margin: auto;
-    width: 85%;
-    height: auto;
 }
 
 @supports ((-webkit-backdrop-filter: blur(2.1vw)) or (backdrop-filter: blur(2.1vw))) {
@@ -373,11 +355,19 @@ body {
         width: 100%;
         height: auto;
     }
+    .previmglarge {
+        width: auto;
+        height: 90%;
+    }
 }
 
 @media (max-aspect-ratio: 16/9) {
     .background {
         width: auto;
         height: 100%;
+    }
+    .previmglarge {
+        width: 80%;
+        height: auto;
     }
 }
