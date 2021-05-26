@@ -15,3 +15,32 @@ window.onscroll = function() {
         document.querySelector('.fixedtopbar').style.visibility = "hidden";
     }
 };
+
+function zoomtoimg(source) {
+    document.querySelector('.previmglarge').src = source;
+    document.querySelector('.largimgcont').style.display = '';
+
+}
+
+function previmg(direction) {
+    var item = "";
+    if (direction == "forward") {
+        item = document.querySelector(".previmg:not(.hidden)").nextElementSibling;
+        if (item == null || item.classList.contains("prevbottom")) {
+            item = document.querySelectorAll('.previmg')[0];
+        }
+        document.querySelectorAll(".previmg:not(.hidden)").forEach(function(val) {
+            val.classList.add("hidden");
+        });
+        item.classList.remove("hidden");
+    } else if (direction == "back") {
+        item = document.querySelector(".previmg:not(.hidden)").previousElementSibling;
+        if (item == null) {
+            item = document.querySelectorAll('.previmg')[document.querySelectorAll('.previmg').length - 1];
+        }
+        document.querySelectorAll(".previmg:not(.hidden)").forEach(function(val) {
+            val.classList.add("hidden");
+        });
+        item.classList.remove("hidden");
+    }
+}

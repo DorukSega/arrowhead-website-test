@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Overpass';
+    src: url('fonts/Overpass-Regular.eot');
+    src: url('fonts/Overpass-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Overpass-Regular.woff2') format('woff2'), url('fonts/Overpass-Regular.woff') format('woff'), url('fonts/Overpass-Regular.ttf') format('truetype'), url('fonts/Overpass-Regular.svg#Overpass-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* 
         Brand Colors 
@@ -40,6 +49,7 @@ body {
     color: var(--white);
     font-weight: 300;
     font-style: normal;
+    font-family: 'Overpass';
     margin: 0;
     font-size: 1.5vmax;
     overflow-x: hidden;
@@ -49,6 +59,10 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 .background {
@@ -79,13 +93,14 @@ body {
     text-align: center;
 }
 
-.logo {
-    font-family: 'Catamaran', sans-serif;
-    font-size: 14vmin;
-    font-weight: 900;
+.topbar .logo {
     position: relative;
     width: 100%;
-    letter-spacing: -1vmin;
+    fill: #ffffff;
+}
+
+.topbar .logosvg {
+    width: 50%;
 }
 
 .fixedtopbar {
@@ -101,12 +116,43 @@ body {
     background-color: rgba(24, 24, 24, .98);
 }
 
+.fixedtopbar .logo {
+    position: absolute;
+    left: 0;
+    width: auto;
+    height: 1.7vmax;
+    padding: 1vmax 0 1vmax .5vmax;
+    text-align: left;
+    fill: #ffffff;
+}
+
+.fixedtopbar .logosvg {
+    height: 100%;
+}
+
 .fixedtopbar .pageopt {
     position: relative;
-    margin-top: 0;
+    margin-top: unset;
     text-align: center;
     display: flex;
     justify-content: center;
+}
+
+.fixedtopbar .socials {
+    position: absolute;
+    right: 1%;
+    bottom: auto;
+    margin-right: unset;
+    margin-bottom: auto !important;
+    margin-top: auto !important;
+    display: flex;
+    justify-content: right;
+}
+
+.fixedtopbar .sicons {
+    height: auto;
+    width: 2.5vmax;
+    margin-top: auto;
 }
 
 .pageopt {
@@ -120,7 +166,6 @@ body {
 .option {
     padding: 0 1.5vmax .5vmax 1.5vmax;
     border-bottom: 0.04vmax solid rgba(255, 255, 255, 0.3);
-    font-family: 'Catamaran', sans-serif;
     font-weight: 300;
     font-size: 2.1vmax;
 }
@@ -141,8 +186,8 @@ body {
     position: absolute;
     right: 0%;
     bottom: 0%;
-    padding-right: .3vmax;
-    padding-bottom: .6vmax;
+    margin-right: .1vmax;
+    margin-bottom: .1vmax;
     display: flex;
     justify-content: right;
 }
@@ -175,7 +220,6 @@ body {
 .playtext {
     font-weight: 200;
     font-size: 2.5vmin;
-    font-family: 'Catamaran', sans-serif;
     letter-spacing: .4vmin;
     text-transform: uppercase;
     color: #ffffff;
@@ -192,7 +236,7 @@ body {
 
 .bottombar {
     position: relative;
-    min-width: 100vw;
+    width: 100%;
     height: fit-content;
     box-sizing: border-box;
     display: block;
@@ -245,8 +289,8 @@ body {
     border-radius: .5vmin;
     margin-right: 3vmin;
     margin-left: 2vmin;
-    padding: 0 1vmin 0 1.1vmin;
-    width: 50vmin;
+    padding: 0 1vmin 0 1vmin;
+    width: 53vmin;
     height: fit-content;
     border: .4vmin solid #FFFF9C80;
 }
@@ -272,20 +316,48 @@ body {
 .prevbottom {
     white-space: nowrap;
     text-align: center;
+    padding: 1vmin 0 1vmin 0;
+    position: relative;
     display: flex;
     justify-content: center;
-    padding: 1vmin 1vmin 1vmin 1vmin;
-    position: relative;
-    width: auto;
+    text-align: center;
+    width: 100vw;
     font-weight: 100;
     font-style: italic;
     font-size: 2.5vmin;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .previmg {
+    margin-left: auto;
+    margin-right: auto;
     width: auto;
-    height: 28vmin;
+    height: 30vmin;
+    cursor: zoom-in;
+}
+
+.previmg.hidden {
+    display: none;
+}
+
+.largimgcont {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-out;
+    z-index: 101;
+    background-color: #18181890;
+}
+
+.previmglarge {
+    margin: auto;
+    width: 85%;
+    height: auto;
 }
 
 @supports ((-webkit-backdrop-filter: blur(2.1vw)) or (backdrop-filter: blur(2.1vw))) {
