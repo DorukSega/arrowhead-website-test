@@ -1,0 +1,311 @@
+:root {
+    /* 
+        Brand Colors 
+    usage -> var(--black);
+    */
+    --black: #181818;
+    --dred: #BC252A;
+    --red: #F52F34;
+    --lred: #F05129;
+    --dgreen: #164815;
+    --green: #13AC1E;
+    --blue: #5C8685;
+    --white: #FFFFFF;
+    --vort: #665F57;
+    --lights: #FFFF9C;
+}
+
+::-webkit-scrollbar {
+    width: 0.9vmin;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--dred);
+    border-radius: 0.5vmin;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-arrow-color: rgba(255, 255, 255, 0);
+    color: var(--white);
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    font-size: 1.5vmax;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--black);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.background {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -99;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+.topbar {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    padding: 2vw 0 1vmin 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 14vmin;
+    font-weight: 900;
+    position: relative;
+    width: 100%;
+    letter-spacing: -1vmin;
+}
+
+.fixedtopbar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    padding: 1vmin 0 1vmin 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: rgba(24, 24, 24, .98);
+}
+
+.fixedtopbar .pageopt {
+    position: relative;
+    margin-top: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.pageopt {
+    position: relative;
+    margin-top: 1vmax;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    padding: 0 1.5vmax .5vmax 1.5vmax;
+    border-bottom: 0.04vmax solid rgba(255, 255, 255, 0.3);
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    font-size: 2.1vmax;
+}
+
+.option.selected {
+    color: var(--red);
+    cursor: auto;
+    border-color: var(--red);
+}
+
+.option:not(.selected):hover {
+    color: var(--red);
+    cursor: pointer;
+    border-color: var(--red);
+}
+
+.socials {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    padding-right: .3vmax;
+    padding-bottom: .6vmax;
+    display: flex;
+    justify-content: right;
+}
+
+.sicons {
+    fill: #ffffff;
+    cursor: pointer;
+    height: auto;
+    width: 3.5vmax;
+    padding: .2vmax;
+    border-radius: .75vw;
+    display: flex;
+    transition: color .1s, fill .1s;
+}
+
+.playbtn {
+    border: .4vmin solid #ffffff;
+    padding: .5vmin .5vmin;
+    margin: .5vmin .5vmin;
+    border-radius: .4vmin;
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s
+}
+
+.playtext {
+    font-weight: 200;
+    font-size: 2.5vmin;
+    font-family: 'Catamaran', sans-serif;
+    letter-spacing: .4vmin;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.playbtn:hover {
+    border: .4vmin solid var(--red);
+    transform: translateY(-.6vmin);
+}
+
+.sicons:hover {
+    fill: var(--red);
+}
+
+.bottombar {
+    position: relative;
+    min-width: 100vw;
+    height: fit-content;
+    box-sizing: border-box;
+    display: block;
+    background-color: #00000080;
+}
+
+.tab {
+    position: relative;
+    display: flex;
+    padding: 2vmin;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    height: 40vmin;
+}
+
+.topcont {
+    background-color: #BC252A60;
+}
+
+.midcont {
+    background-color: #16481580;
+}
+
+.botcont {
+    background-color: #18181880;
+}
+
+.abouttext {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-break: break-all;
+    width: 50vmin;
+    height: auto;
+    border: .4vmin solid #FFFF9C80;
+    border-radius: .5vmin;
+    padding: 2vmin;
+    margin-right: 2vmin;
+    margin-left: 3vmin;
+}
+
+.previmgcont {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: .5vmin;
+    margin-right: 3vmin;
+    margin-left: 2vmin;
+    padding: 0 1vmin 0 1.1vmin;
+    width: 50vmin;
+    height: fit-content;
+    border: .4vmin solid #FFFF9C80;
+}
+
+.arrow {
+    font-size: 4vmin;
+    padding: 1vmin;
+    background-color: #ffffff20;
+    border-radius: .1vmin;
+}
+
+.arrow:hover,
+.arrow:active {
+    color: var(--dred);
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+.prevtext {
+    padding: 1vmin;
+}
+
+.prevbottom {
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 1vmin 1vmin 1vmin 1vmin;
+    position: relative;
+    width: auto;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 2.5vmin;
+    text-align: center;
+}
+
+.previmg {
+    width: auto;
+    height: 28vmin;
+}
+
+@supports ((-webkit-backdrop-filter: blur(2.1vw)) or (backdrop-filter: blur(2.1vw))) {
+    .bottombar {
+        background: none;
+        backdrop-filter: blur(1vw);
+        -webkit-backdrop-filter: blur(1vw);
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .background {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .background {
+        width: auto;
+        height: 100%;
+    }
+}
