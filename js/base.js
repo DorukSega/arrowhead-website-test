@@ -2,7 +2,7 @@ function load() {
     if (navigator.userAgent.indexOf('Trident/') > 0 || navigator.userAgent.indexOf('MSIE ') > 0) {
         document.body.innerHTML = "";
         var elem = document.createElement('h1');
-        elem.innerText = " Internet Explorer 🎉";
+        elem.innerText = " Well done, you've reached mesozoic era 🎉";
         document.body.appendChild(elem);
     }
 }
