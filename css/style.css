@@ -200,7 +200,7 @@ body {
 .bottombar {
     position: relative;
     width: 100%;
-    height: fit-content;
+    height: auto;
     box-sizing: border-box;
     display: block;
     background-color: #17171780;
@@ -402,7 +402,6 @@ body {
 }
 
 .teamtitle {
-    font-size: 5vmin;
     text-align: center;
     flex-basis: 100%;
 }
@@ -435,6 +434,9 @@ body {
         width: 80%;
         height: auto;
     }
+}
+
+@media (max-aspect-ratio: 3/4) {
     .about .row {
         flex-direction: column;
     }
