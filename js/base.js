@@ -11,7 +11,7 @@ function postfeed() {
     /* guidlines for later:
     make a array
     0: title
-    1: first paragraph or preview
+    1: first paragraph or preview but cut it in js to 2 lines or so "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor..."
     2: first image 
     3: link
     Then put it in news section

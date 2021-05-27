@@ -377,7 +377,7 @@ body {
     position: relative;
     width: auto;
     height: 14vmin;
-    border: .4vmin solid var(--inchworm);
+    border: .425vmin solid var(--inchworm);
     border-radius: .5vmin;
 }
 
@@ -410,18 +410,6 @@ body {
     height: 100%;
     fill: var(--white);
     border-radius: .4vmin;
-}
-
-.iconlink {
-    font-size: 5vmin;
-    color: var(--black);
-    border-radius: .4vmin;
-    text-align: center;
-    background-color: var(--white);
-}
-
-.iconlink:hover {
-    background-color: var(--inchworm);
 }
 
 .teamtitle,
@@ -475,6 +463,11 @@ body {
     padding: 2vmin;
     justify-content: center;
     margin: auto;
+    width: 100%;
+}
+
+.newscont a {
+    flex: 1;
 }
 
 .newscont .row {
@@ -483,13 +476,14 @@ body {
     justify-content: flex-end;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 40vmin;
-    height: 40vmin;
+    width: auto;
+    height: 20vmax;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     background-image: url('https://miro.medium.com/max/5000/1*zUjZT86WDWIfWFHb9OMjjw@2x.jpeg');
-    border-radius: .3vmax;
+    border-radius: .2vmax;
+    flex: 1;
 }
 
 .newscont .row:hover {
@@ -508,7 +502,7 @@ body {
 
 .newinnertitle {
     text-align: left;
-    font-size: 1.2vmax;
+    font-size: 1.1vmax;
     padding: 1vmin 1vmin 0 1vmin;
     width: fit-content;
     margin: unset;
@@ -516,7 +510,7 @@ body {
 
 .newfit {
     text-align: left;
-    font-size: 1vmax;
+    font-size: .9vmax;
     padding: .5vmax;
     overflow: hidden;
 }
@@ -551,7 +545,7 @@ body {
         height: 100%;
     }
     .previmglarge {
-        width: 80%;
+        width: 90%;
         height: auto;
     }
 }
