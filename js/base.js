@@ -19,7 +19,7 @@ function postfeed() {
 }
 
 window.onscroll = function() {
-    if (document.documentElement.scrollTop > document.querySelectorAll('.pageopt')[1].offsetTop) {
+    if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
         document.querySelector('.fixedtopbar').style.visibility = "visible";
     } else {
         document.querySelector('.fixedtopbar').style.visibility = "hidden";
@@ -33,7 +33,18 @@ function zoomtoimg(source) {
 
 function previmg(direction) {
     var item = "";
+    var titem = "";
     if (direction == "forward") {
+
+        titem = document.querySelector(".prevtext:not(.hidden)").nextElementSibling;
+        if (titem == null || titem.classList.contains("arrow")) {
+            titem = document.querySelectorAll('.prevtext')[0];
+        }
+        document.querySelectorAll(".prevtext:not(.hidden)").forEach(function(val) {
+            val.classList.add("hidden");
+        });
+        titem.classList.remove("hidden");
+
         item = document.querySelector(".previmg:not(.hidden)").nextElementSibling;
         if (item == null || item.classList.contains("prevbottom")) {
             item = document.querySelectorAll('.previmg')[0];
@@ -43,6 +54,15 @@ function previmg(direction) {
         });
         item.classList.remove("hidden");
     } else if (direction == "back") {
+        titem = document.querySelector(".prevtext:not(.hidden)").previousElementSibling;
+        if (titem == null || titem.classList.contains("arrow")) {
+            titem = document.querySelectorAll('.prevtext')[document.querySelectorAll('.prevtext').length - 1];
+        }
+        document.querySelectorAll(".prevtext:not(.hidden)").forEach(function(val) {
+            val.classList.add("hidden");
+        });
+        titem.classList.remove("hidden");
+
         item = document.querySelector(".previmg:not(.hidden)").previousElementSibling;
         if (item == null) {
             item = document.querySelectorAll('.previmg')[document.querySelectorAll('.previmg').length - 1];

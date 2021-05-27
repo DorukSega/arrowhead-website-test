@@ -12,16 +12,11 @@
         Brand Colors 
     usage -> var(--black);
     */
-    --black: #181818;
-    --dred: #BC252A;
-    --red: #F52F34;
-    --lred: #F05129;
-    --dgreen: #164815;
-    --green: #13AC1E;
-    --blue: #5C8685;
-    --white: #FFFFFF;
-    --vort: #665F57;
-    --lights: #FFFF9C;
+    --black: #171717;
+    --inchworma: #b2ec5d26;
+    --inchworm: #b2ec5d;
+    --white: #e8e8e8;
+    --dwhite: #cccccc;
 }
 
 ::-webkit-scrollbar {
@@ -29,12 +24,26 @@
 }
 
  ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0);
+    background: rgba( 232, 232, 232, 0);
 }
 
  ::-webkit-scrollbar-thumb {
-    background: var(--dred);
+    background: var(--inchworma);
     border-radius: 0.5vmin;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: unset;
+    text-decoration: none;
+}
+
+a:hover {
+    color: unset;
+    text-decoration: none;
 }
 
 body {
@@ -43,7 +52,7 @@ body {
     color: var(--white);
     font-weight: 300;
     font-style: normal;
-    font-family: 'Overpass';
+    font-family: 'Montserrat';
     margin: 0;
     font-size: 1.5vmax;
     overflow-x: hidden;
@@ -66,167 +75,126 @@ body {
     min-width: 100%;
     min-height: 100%;
     z-index: -99;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
 }
 
 .topbar {
     position: relative;
-    height: fit-content;
-    width: 100%;
-    padding: 2vw 0 1vmin 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.topbar .logo {
-    position: relative;
-    width: 100%;
-    fill: #ffffff;
-}
-
-.topbar .logosvg {
-    width: 50%;
-}
-
-.fixedtopbar {
-    position: fixed;
-    top: 0%;
-    width: 100%;
-    padding: 1vmin 0 1vmin 0;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-    background-color: rgba(24, 24, 24, .98);
-}
-
-.fixedtopbar .logo {
-    position: absolute;
-    left: 0;
-    width: auto;
-    height: 1.7vmax;
-    padding: .8vmax 0 .8vmax .5vmax;
-    text-align: left;
-    fill: #ffffff;
-}
-
-.fixedtopbar .logosvg {
-    height: 100%;
-}
-
-.fixedtopbar .pageopt {
-    position: relative;
-    margin-top: unset;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.fixedtopbar .socials {
-    position: absolute;
-    right: 1%;
-    bottom: auto;
-    margin-right: unset;
-    margin-bottom: auto !important;
-    margin-top: auto !important;
-    display: flex;
-    justify-content: right;
-}
-
-.fixedtopbar .sicons {
     height: auto;
-    width: 2.5vmax;
-    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.logo {
+    position: relative;
+    width: 50%;
+    height: auto;
+    fill: var(--white);
+    margin: auto;
+    margin-top: 2vmin;
 }
 
 .pageopt {
     position: relative;
-    margin-top: 1vmax;
     text-align: center;
     display: flex;
     justify-content: center;
+    font-family: 'Overpass';
+    flex: 4;
+    margin-top: auto;
 }
 
 .option {
     padding: 0 1.5vmax .5vmax 1.5vmax;
-    border-bottom: 0.04vmax solid rgba(255, 255, 255, 0.3);
+    border-bottom: 0.04vmax solid rgba( 232, 232, 232, 0.3);
     font-weight: 300;
     font-size: 2.1vmax;
     text-transform: uppercase;
 }
 
+.option:hover,
 .option.selected {
-    color: var(--red);
-    cursor: auto;
-    border-color: var(--red);
-}
-
-.option:not(.selected):hover {
-    color: var(--red);
+    color: var(--inchworm);
     cursor: pointer;
-    border-color: var(--red);
+    border-color: var(--inchworm);
 }
 
 .socials {
-    position: absolute;
-    right: 0%;
-    bottom: 0%;
-    margin-right: .1vmax;
-    margin-bottom: .1vmax;
+    position: relative;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
+    flex: 2;
 }
 
 .sicons {
-    fill: #ffffff;
+    fill: var(--white);
     cursor: pointer;
     height: auto;
     width: 3.5vmax;
     padding: .2vmax;
-    border-radius: .75vw;
+    border-radius: .4vmin;
     display: flex;
-    transition: color .1s, fill .1s;
 }
 
 .playbtn {
-    border: .4vmin solid #ffffff;
-    padding: .5vmin .5vmin;
-    margin: .5vmin .5vmin;
+    border: .4vmin solid var(--white);
     border-radius: .4vmin;
     cursor: pointer;
-    width: fit-content;
+    width: auto;
+    padding: .3vmax 2vmax .3vmax 2vmax;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    transition-duration: 0.2s
+    margin-top: auto;
+    margin-bottom: auto;
+    display: none;
 }
 
 .playtext {
-    font-weight: 200;
-    font-size: 2.5vmin;
-    letter-spacing: .4vmin;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--white);
 }
 
 .playbtn:hover {
-    border: .4vmin solid var(--red);
-    transform: translateY(-.6vmin);
+    border-color: var(--inchworm);
 }
 
-.sicons:hover {
-    fill: var(--red);
+.toprow {
+    margin-top: 2vmin;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.toprow .logo,
+.fixedtopbar .logo {
+    height: auto;
+    width: 30%;
+    flex: 2;
+    margin: auto;
+}
+
+.fixedtopbar {
+    position: fixed;
+    width: 100%;
+    padding: 1vmin;
+    z-index: 100;
+    background-color: rgba(23, 23, 23, .98);
+    margin: unset;
+}
+
+.fixedtopbar .socials {
+    padding-right: 2vmin;
+    margin: auto;
+}
+
+.sicons:hover,
+.psocial:hover {
+    fill: var(--inchworm);
 }
 
 .bottombar {
@@ -235,89 +203,115 @@ body {
     height: fit-content;
     box-sizing: border-box;
     display: block;
-    background-color: #00000080;
+    background-color: #17171780;
 }
 
 .tab {
     position: relative;
     display: flex;
-    padding: 2vmin;
-    align-items: center;
+    padding: 1vmax;
+    flex-direction: row;
     justify-content: center;
-    min-width: 100vw;
-    height: 40vmin;
-    background-color: #18181880;
+    min-width: 98%;
+    height: fit-content;
+    background-color: #17171780;
 }
 
-.abouttext {
+.container {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    word-break: break-all;
-    width: 50vmin;
-    height: auto;
-    border: .4vmin solid #FFFF9C80;
+    justify-content: center;
     border-radius: .5vmin;
+    border: .4vmin solid var(--inchworm);
+    flex-direction: column;
+    flex-wrap: wrap;
     padding: 2vmin;
-    margin-right: 2vmin;
-    margin-left: 3vmin;
+}
+
+.about {
+    font-size: 1.5vmax;
+}
+
+.about .row {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    flex: 1;
+    margin: auto;
+    padding-right: 2vmin;
 }
 
 .previmgcont {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    border-radius: .5vmin;
-    margin-right: 3vmin;
-    margin-left: 2vmin;
-    padding: 0 1vmin 0 1vmin;
-    width: 53vmin;
+    flex: 1;
+    height: auto;
+    border: unset;
+    border-radius: 0;
+    border-left: 0.05vmax solid var(--inchworm);
+}
+
+.title {
+    font-family: 'Overpass';
+    font-size: 3vmax;
     height: fit-content;
-    border: .4vmin solid #FFFF9C80;
+    margin-bottom: 1vmax;
+    border-bottom: 0.04vmax solid var(--inchworm);
+}
+
+.titlen {
+    font-size: 2.5vmax;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1vmax;
 }
 
 .arrow {
-    font-size: 4vmin;
-    padding: 1vmin;
-    background-color: #ffffff20;
+    font-size: 3vmax;
+    padding: .5vmax;
+    margin-left: .5vmax;
+    margin-right: .5vmax;
+    background-color: #e8e8e820;
     border-radius: .1vmin;
 }
 
 .arrow:hover,
 .arrow:active {
-    color: var(--dred);
+    color: var(--black);
     cursor: pointer;
-    background-color: var(--white);
+    background-color: var(--inchworm);
 }
 
 .prevtext {
-    padding: 1vmin;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1.4vmax;
+    white-space: nowrap;
+    min-width: 40vmin;
+}
+
+.prevtext.hidden {
+    display: none;
 }
 
 .prevbottom {
-    white-space: nowrap;
     text-align: center;
     padding: 1vmin 0 1vmin 0;
     position: relative;
     display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100vw;
-    font-weight: 100;
-    font-style: italic;
-    font-size: 2.5vmin;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
 }
 
 .previmg {
     margin-left: auto;
     margin-right: auto;
-    width: auto;
-    height: 30vmin;
+    height: auto;
+    width: 100%;
     cursor: zoom-in;
 }
 
@@ -335,11 +329,82 @@ body {
     height: 100%;
     cursor: zoom-out;
     z-index: 101;
-    background-color: #18181890;
+    background-color: #17171790;
 }
 
 .previmglarge {
     margin: auto;
+}
+
+.team {
+    text-align: left;
+    flex-direction: row;
+    flex: 1;
+}
+
+.peoplecont {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 2vmin;
+}
+
+.profileimg {
+    position: relative;
+    width: auto;
+    height: 14vmin;
+    border: .4vmin solid var(--inchworm);
+    border-radius: .5vmin;
+}
+
+.peopleright {
+    padding-left: 1vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.peoplename {
+    border-bottom: 0.04vmax solid var(--inchworm);
+    font-family: 'Overpass';
+}
+
+.peopleinfo {
+    padding-top: .5vmin;
+    font-size: 1vmax;
+    margin: 1vmin 0 1vmin 0;
+}
+
+.peoplescont {
+    height: 5vmin;
+    width: auto;
+    white-space: nowrap;
+}
+
+.psocial {
+    width: auto;
+    height: 100%;
+    fill: var(--white);
+    border-radius: .4vmin;
+}
+
+.iconlink {
+    font-size: 5vmin;
+    color: var(--black);
+    border-radius: .4vmin;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.iconlink:hover {
+    background-color: var(--inchworm);
+}
+
+.teamtitle {
+    font-size: 5vmin;
+    text-align: center;
+    flex-basis: 100%;
 }
 
 @supports ((-webkit-backdrop-filter: blur(2.1vw)) or (backdrop-filter: blur(2.1vw))) {
