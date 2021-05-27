@@ -212,7 +212,7 @@ body {
     padding: 1vmax;
     flex-direction: row;
     justify-content: center;
-    min-width: 98%;
+    width: 98%;
     height: fit-content;
     background-color: #17171780;
 }
@@ -434,5 +434,15 @@ body {
     .previmglarge {
         width: 80%;
         height: auto;
+    }
+    .about .row {
+        flex-direction: column;
+    }
+    .text {
+        padding-bottom: 2vmin;
+    }
+    .previmgcont {
+        border: unset;
+        border-top: 0.05vmax solid var(--inchworm);
     }
 }
