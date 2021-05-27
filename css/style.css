@@ -262,7 +262,7 @@ body {
 
 .titlen {
     font-size: 2.5vmax;
-    width: fit-content;
+    width: max-content;
     margin: auto;
     margin-bottom: 1vmax;
 }
@@ -342,10 +342,33 @@ body {
     flex: 1;
 }
 
+.team .row {
+    flex: 1;
+}
+
+.perow {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: left;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+    border-right: 0.05vmax solid var(--inchworm);
+}
+
+.peoutrow {
+    padding-right: 1vmin;
+}
+
+.jointext {
+    text-align: center;
+}
+
 .peoplecont {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     padding: 2vmin;
 }
@@ -401,16 +424,113 @@ body {
     background-color: var(--inchworm);
 }
 
-.teamtitle {
+.teamtitle,
+.faqtitle,
+.newstitle {
     text-align: center;
     flex-basis: 100%;
 }
 
+.faq {
+    text-align: left;
+    flex-direction: row;
+    flex: 1;
+}
+
+.faq .row {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.faq .row:nth-child(2) {
+    border-right: 0.05vmax solid var(--inchworm);
+}
+
+.faq .collumn {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2vmin;
+}
+
+.question {
+    font-family: 'Overpass';
+    color: var(--inchworm);
+    font-size: 1.8vmax;
+}
+
+.news {
+    text-align: center;
+    flex-direction: row;
+    flex: 1;
+}
+
+.newscont .rowcont {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 2vmin;
+    justify-content: center;
+    margin: auto;
+}
+
+.newscont .row {
+    margin: .5vmin;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 40vmin;
+    height: 40vmin;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-image: url('https://miro.medium.com/max/5000/1*zUjZT86WDWIfWFHb9OMjjw@2x.jpeg');
+    border-radius: .3vmax;
+}
+
+.newscont .row:hover {
+    transform: scale(1.08);
+}
+
+.bottomnew {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(23, 23, 23, .95);
+}
+
+.newinnertitle {
+    text-align: left;
+    font-size: 1.2vmax;
+    padding: 1vmin 1vmin 0 1vmin;
+    width: fit-content;
+    margin: unset;
+}
+
+.newfit {
+    text-align: left;
+    font-size: 1vmax;
+    padding: .5vmax;
+    overflow: hidden;
+}
+
 @supports ((-webkit-backdrop-filter: blur(2.1vw)) or (backdrop-filter: blur(2.1vw))) {
     .bottombar {
-        background: none;
+        background-color: unset;
         backdrop-filter: blur(1vw);
         -webkit-backdrop-filter: blur(1vw);
+    }
+    .bottomnew {
+        background-color: unset;
+        backdrop-filter: blur(2vmax);
+        -webkit-backdrop-filter: blur(2vmax);
     }
 }
 
@@ -437,7 +557,8 @@ body {
 }
 
 @media (max-aspect-ratio: 3/4) {
-    .about .row {
+    .about .row,
+    .team {
         flex-direction: column;
     }
     .text {
@@ -446,5 +567,11 @@ body {
     .previmgcont {
         border: unset;
         border-top: 0.05vmax solid var(--inchworm);
+    }
+    .teamtitle {
+        flex-basis: unset;
+    }
+    .perow {
+        border: unset;
     }
 }

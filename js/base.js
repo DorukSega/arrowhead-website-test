@@ -8,6 +8,14 @@ function load() {
 }
 
 function postfeed() {
+    /* guidlines for later:
+    make a array
+    0: title
+    1: first paragraph or preview
+    2: first image 
+    3: link
+    Then put it in news section
+    */
     let parser = new RSSParser();
     parser.parseURL('http://' + window.location.hostname + ':4050/medium', function(err, feed) {
         if (err) throw err;
@@ -23,6 +31,35 @@ window.onscroll = function() {
         document.querySelector('.fixedtopbar').style.visibility = "visible";
     } else {
         document.querySelector('.fixedtopbar').style.visibility = "hidden";
+    }
+    if (document.documentElement.scrollTop > document.querySelector('.newscont').offsetTop & document.documentElement.scrollTop < document.querySelector('.faqcont').offsetTop) {
+        document.querySelectorAll(".option").forEach(function(val) {
+            val.classList.remove("selected");
+        });
+        document.querySelectorAll(".newsoption").forEach(function(val) {
+            val.classList.add("selected");
+        });
+    } else if (document.documentElement.scrollTop > document.querySelector('.faqcont').offsetTop & document.documentElement.scrollTop < document.querySelector('.teamcont').offsetTop) {
+        document.querySelectorAll(".option").forEach(function(val) {
+            val.classList.remove("selected");
+        });
+        document.querySelectorAll(".faqoption").forEach(function(val) {
+            val.classList.add("selected");
+        });
+    } else if (document.documentElement.scrollTop > document.querySelector('.teamcont').offsetTop) {
+        document.querySelectorAll(".option").forEach(function(val) {
+            val.classList.remove("selected");
+        });
+        document.querySelectorAll(".teamoption").forEach(function(val) {
+            val.classList.add("selected");
+        });
+    } else if (document.querySelector('.aboutoption').classList.contains("selected") == false) {
+        document.querySelectorAll(".option").forEach(function(val) {
+            val.classList.remove("selected");
+        });
+        document.querySelectorAll(".aboutoption").forEach(function(val) {
+            val.classList.add("selected");
+        });
     }
 };
 
