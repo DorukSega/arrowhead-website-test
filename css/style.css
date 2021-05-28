@@ -170,6 +170,10 @@ body {
     justify-content: space-between;
 }
 
+.topbar .toprow {
+    width: 70%;
+}
+
 .toprow .logo,
 .fixedtopbar .logo {
     height: auto;
@@ -199,8 +203,8 @@ body {
 
 .bottombar {
     position: relative;
-    width: 100%;
-    height: auto;
+    width: 70%;
+    margin: auto;
     box-sizing: border-box;
     display: block;
     background-color: #17171780;
@@ -212,9 +216,8 @@ body {
     padding: 1vmax;
     flex-direction: row;
     justify-content: center;
-    width: 98%;
-    height: fit-content;
-    background-color: #17171780;
+    width: fit-content;
+    margin: auto;
 }
 
 .container {
@@ -230,12 +233,13 @@ body {
 }
 
 .about {
-    font-size: 1.5vmax;
+    font-size: 1.4vmax;
 }
 
 .about .row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .text {
@@ -249,7 +253,6 @@ body {
     height: auto;
     border: unset;
     border-radius: 0;
-    border-left: 0.05vmax solid var(--inchworm);
 }
 
 .title {
@@ -338,7 +341,7 @@ body {
 
 .team {
     text-align: left;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
 }
 
@@ -354,7 +357,6 @@ body {
     flex-direction: row;
     justify-content: center;
     flex: 1;
-    border-right: 0.05vmax solid var(--inchworm);
 }
 
 .peoutrow {
@@ -376,7 +378,7 @@ body {
 .profileimg {
     position: relative;
     width: auto;
-    height: 14vmin;
+    height: 10vmax;
     border: .425vmin solid var(--inchworm);
     border-radius: .5vmin;
 }
@@ -400,19 +402,22 @@ body {
 }
 
 .peoplescont {
-    height: 5vmin;
-    width: auto;
+    height: auto;
+    width: fit-content;
     white-space: nowrap;
 }
 
 .psocial {
     width: auto;
-    height: 100%;
+    height: 3vmax;
     fill: var(--white);
     border-radius: .4vmin;
 }
 
-.teamtitle,
+.teamtitle {
+    text-align: center;
+}
+
 .faqtitle,
 .newstitle {
     text-align: center;
@@ -517,7 +522,6 @@ body {
 
 @supports ((-webkit-backdrop-filter: blur(2.1vw)) or (backdrop-filter: blur(2.1vw))) {
     .bottombar {
-        background-color: unset;
         backdrop-filter: blur(1vw);
         -webkit-backdrop-filter: blur(1vw);
     }
@@ -551,8 +555,11 @@ body {
 }
 
 @media (max-aspect-ratio: 4/4) {
-    .about .row,
-    .team {
+    .bottombar,
+    .topbar .toprow {
+        width: 100%;
+    }
+    .about .row {
         flex-direction: column;
     }
     .text {
@@ -562,10 +569,7 @@ body {
         border: unset;
         border-top: 0.05vmax solid var(--inchworm);
     }
-    .teamtitle {
-        flex-basis: unset;
-    }
-    .perow {
-        border: unset;
+    .profileimg {
+        height: 14vmin;
     }
 }
