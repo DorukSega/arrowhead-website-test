@@ -138,20 +138,24 @@ body {
     display: flex;
 }
 
+
+/*  Unused play btn, probably will be implemented on release.
+    It needs a place for it to be, probably a new tab just for release
+<div class="playbtn"> <!-- Enable on release -->
+    <div class="playtext">Play!</div>
+</div> 
+*/
+
 .playbtn {
+    margin: auto;
+    position: relative;
     border: .4vmin solid var(--white);
-    border-radius: .4vmin;
-    cursor: pointer;
-    width: auto;
-    padding: .3vmax 2vmax .3vmax 2vmax;
-    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: none;
+    cursor: pointer;
+    border-radius: .4vmin;
 }
 
 .playtext {
@@ -242,10 +246,18 @@ body {
     flex-wrap: wrap;
 }
 
-.text {
+.about .collumn {
     flex: 1;
     margin: auto;
     padding-right: 2vmin;
+    padding-bottom: 2vmin;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    padding-left: 5vmin;
+    padding-right: 5vmin;
 }
 
 .previmgcont {
@@ -568,9 +580,6 @@ body {
     }
     .about .row {
         flex-direction: column;
-    }
-    .text {
-        padding-bottom: 2vmin;
     }
     .previmgcont {
         border: unset;
