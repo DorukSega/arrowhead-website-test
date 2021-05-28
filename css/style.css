@@ -48,7 +48,6 @@ a:hover {
 
 body {
     scroll-behavior: smooth;
-    scrollbar-width: thin;
     color: var(--white);
     font-weight: 300;
     font-style: normal;
