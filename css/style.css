@@ -271,18 +271,24 @@ body {
 }
 
 .arrow {
-    font-size: 3vmax;
-    padding: .5vmax;
-    margin-left: .5vmax;
-    margin-right: .5vmax;
     background-color: #e8e8e820;
     border-radius: .1vmin;
+    fill: var(--white);
+    padding: .2vmax;
+    display: flex;
+    justify-content: center;
+}
+
+.arrowicons {
+    cursor: pointer;
+    height: auto;
+    width: 5.5vmin;
+    padding: .3vmax;
 }
 
 .arrow:hover,
 .arrow:active {
-    color: var(--black);
-    cursor: pointer;
+    fill: var(--black);
     background-color: var(--inchworm);
 }
 
@@ -290,6 +296,7 @@ body {
     margin-top: auto;
     margin-bottom: auto;
     font-weight: 100;
+    padding: 1vmin;
     font-style: italic;
     font-size: 1.4vmax;
     white-space: nowrap;

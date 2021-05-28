@@ -22,7 +22,6 @@
     <meta name="twitter:image" content="https://i.imgur.com/9UX3L2L.png" />
     <meta name="twitter:url" content="" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/rss-parser@3.7.6/dist/rss-parser.min.js"></script>
@@ -123,7 +122,11 @@
                             <img class="previmg hidden" onclick="zoomtoimg(this.src);" src="https://miro.medium.com/max/2048/1*-mLqNDJRUssSRA-DTY0fAA@2x.jpeg">
                             <img class="previmg hidden" onclick="zoomtoimg(this.src);" src="https://miro.medium.com/max/2048/1*y7WmDS87YxNLi9olDFFmyQ@2x.jpeg">
                             <div class="prevbottom">
-                                <div class="arrow material-icons" onclick="previmg('back')">arrow_back_ios_new</div>
+                                <div class="arrow" onclick="previmg('back')">
+                                    <svg class="arrowicons" xmlns="http://www.w3.org/2000/svg" height="24" width="24" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+                                        <rect fill="none" height="24" width="24"/><g><polygon points="17.77,3.77 16,2 6,12 16,22 17.77,20.23 9.54,12"/></g>
+                                    </svg>
+                                </div>
                                 <div class="prevtext">"Very Cool Image"</div>
                                 <div class="prevtext hidden">"Something cool about this image"</div>
                                 <div class="prevtext hidden">"Wow so cool!"</div>
@@ -132,7 +135,11 @@
                                 <div class="prevtext hidden">"Extraordinarly good"</div>
                                 <div class="prevtext hidden">"I love it"</div>
                                 <div class="prevtext hidden">"Nice"</div>
-                                <div class="arrow material-icons" onclick="previmg('forward')">arrow_forward_ios</div>
+                                <div class="arrow" onclick="previmg('forward')">
+                                    <svg class="arrowicons" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px"><g>
+                                        <path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
