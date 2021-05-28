@@ -510,7 +510,7 @@ body {
 
 .newfit {
     text-align: left;
-    font-size: .9vmax;
+    font-size: 1vmax;
     padding: .5vmax;
     overflow: hidden;
 }
@@ -550,7 +550,7 @@ body {
     }
 }
 
-@media (max-aspect-ratio: 3/4) {
+@media (max-aspect-ratio: 4/4) {
     .about .row,
     .team {
         flex-direction: column;

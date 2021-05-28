@@ -27,11 +27,16 @@ function postfeed() {
 }
 
 window.onscroll = function() {
-    if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
-        document.querySelector('.fixedtopbar').style.visibility = "visible";
-    } else {
-        document.querySelector('.fixedtopbar').style.visibility = "hidden";
+    try {
+        if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
+            document.querySelector('.fixedtopbar').style.visibility = "visible";
+        } else {
+            document.querySelector('.fixedtopbar').style.visibility = "hidden";
+        }
+    } catch (error) {
+
     }
+    //
     if (document.documentElement.scrollTop > document.querySelector('.newscont').offsetTop & document.documentElement.scrollTop < document.querySelector('.faqcont').offsetTop) {
         document.querySelectorAll(".option").forEach(function(val) {
             val.classList.remove("selected");
