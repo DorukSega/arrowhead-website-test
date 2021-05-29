@@ -475,7 +475,6 @@ body {
 .news {
     text-align: center;
     flex-direction: row;
-    flex: 1;
 }
 
 .newscont .rowcont {
@@ -486,7 +485,6 @@ body {
     padding: 2vmin;
     justify-content: center;
     margin: auto;
-    width: 100%;
 }
 
 .newscont a {
@@ -499,13 +497,13 @@ body {
     justify-content: flex-end;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: auto;
-    height: 20vmax;
+    height: 18vmax;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     background-image: url('https://miro.medium.com/max/5000/1*zUjZT86WDWIfWFHb9OMjjw@2x.jpeg');
     border-radius: .2vmax;
+    box-shadow: 0vw 0vw 1.6vh 0vw rgba(0, 0, 0, 0.7);
     flex: 1;
 }
 
@@ -519,14 +517,13 @@ body {
     flex-wrap: nowrap;
     flex-direction: column;
     width: 100%;
-    height: fit-content;
     background-color: rgba(23, 23, 23, .95);
 }
 
 .newinnertitle {
     text-align: left;
-    font-size: 1.1vmax;
-    padding: 1vmin 1vmin 0 1vmin;
+    font-size: 1vmax;
+    padding: .4vmax .4vmax 0 .4vmax;
     width: fit-content;
     margin: unset;
 }
@@ -534,7 +531,7 @@ body {
 .newfit {
     text-align: left;
     font-size: 1vmax;
-    padding: .5vmax;
+    padding: .4vmax;
     overflow: hidden;
 }
 

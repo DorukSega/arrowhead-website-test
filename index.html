@@ -28,7 +28,7 @@
     <script type="text/javascript" src="js/base.js"></script>
 </head>
 
-<body onload="load()">
+<body onload="load();">
     <div class="base">
         <div class="fixedtopbar toprow" style="visibility: hidden;">
             <div class="logo">
@@ -37,10 +37,10 @@
                   </svg>
             </div>
             <div class="pageopt">
-                <div class="option selected aboutoption" onclick="(document.querySelector('.aboutcont')).scrollIntoView();">About</div>
-                <div class="option newsoption" onclick="(document.querySelector('.newscont')).scrollIntoView();">News</div>
-                <div class="option faqoption" onclick="(document.querySelector('.faqcont')).scrollIntoView();">FAQ</div>
-                <div class="option teamoption" onclick="(document.querySelector('.teamcont')).scrollIntoView();">Team</div>
+                <div class="option selected aboutoption" onclick="scrollto('.aboutcont');">About</div>
+                <div class="option newsoption" onclick="scrollto('.newscont');">News</div>
+                <div class="option faqoption" onclick="scrollto('.faqcont');">FAQ</div>
+                <div class="option teamoption" onclick="scrollto('.teamcont');">Team</div>
             </div>
             <div class="socials">
                 <a target="_blank" href="https://twitter.com/ArrowheadDev">
@@ -71,10 +71,10 @@
                       </svg>
                 </div>
                 <div class="pageopt">
-                    <div class="option selected aboutoption" onclick="(document.querySelector('.aboutcont')).scrollIntoView();">About</div>
-                    <div class="option newsoption" onclick="(document.querySelector('.newscont')).scrollIntoView();">News</div>
-                    <div class="option faqoption" onclick="(document.querySelector('.faqcont')).scrollIntoView();">FAQ</div>
-                    <div class="option teamoption" onclick="(document.querySelector('.teamcont')).scrollIntoView();">Team</div>
+                    <div class="option selected aboutoption" onclick="scrollto('.aboutcont');">About</div>
+                    <div class="option newsoption" onclick="scrollto('.newscont');">News</div>
+                    <div class="option faqoption" onclick="scrollto('.faqcont');">FAQ</div>
+                    <div class="option teamoption" onclick="scrollto('.teamcont');">Team</div>
                 </div>
                 <div class="socials">
                     <a target="_blank" href="https://twitter.com/ArrowheadDev">
@@ -148,7 +148,7 @@
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
                                     <div class="newfit">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
                                     <div class="newfit">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
                                     <div class="newfit">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
                                     <div class="newfit">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
                                     </div>
                                 </div>
                             </div>
@@ -365,10 +365,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="botcont tab">
-
             </div>
         </div>
     </div>
