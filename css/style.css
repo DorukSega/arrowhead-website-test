@@ -502,7 +502,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-    background-image: url('https://miro.medium.com/max/5000/1*zUjZT86WDWIfWFHb9OMjjw@2x.jpeg');
+    background-image: url('../css/gfx/thumb.jpeg');
     border-radius: .2vmax;
     box-shadow: 0vw 0vw 1.6vh 0vw rgba(0, 0, 0, 0.7);
     flex: 1;
