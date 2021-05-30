@@ -33,6 +33,7 @@
 }
 
 a {
+    color: unset;
     text-decoration: none;
 }
 
@@ -507,8 +508,9 @@ body {
     flex: 1;
 }
 
-.newscont .row:hover {
+.newscont a:hover {
     transform: scale(1.08);
+    z-index: 20;
 }
 
 .bottomnew {
@@ -533,6 +535,25 @@ body {
     font-size: 1vmax;
     padding: .4vmax;
     overflow: hidden;
+}
+
+.readmoreatmed {
+    padding: 4vmin;
+    border-radius: .4vmin;
+    font-size: 3.5vmax;
+    text-align: center;
+}
+
+.readmoreatmed:hover {
+    color: var(--inchworm);
+    transform: unset!important;
+}
+
+@-moz-document url-prefix() {
+    /* This is for mozilla to have darker bottombar since it cant use blur */
+    .bottombar {
+        background-color: rgba(23, 23, 23, .85);
+    }
 }
 
 @supports ((-webkit-backdrop-filter: blur(2.1vw)) or (backdrop-filter: blur(2.1vw))) {

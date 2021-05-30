@@ -15,15 +15,16 @@ function load() {
         scrollto('.aboutcont');
     }
     //loading the updates
-
+    //loadfeed(); //enable this when server is up
 }
 
 function scrollto(item) {
     document.querySelector(item).scrollIntoView();
+    scrollBy(0, -document.querySelector(".title").offsetHeight)
 }
 
 function loadfeed() {
-    /* guidlines:
+    /* guidline for the array:
     0: title
     1: link
     2: date
@@ -34,19 +35,58 @@ function loadfeed() {
     var posts = [];
     let parser = new RSSParser();
     parser.parseURL('http://' + window.location.hostname + ':4050/medium', function(err, feed) {
-        if (err) throw err;
-        feed.items.forEach(function(entry, index) {
-            posts.push([]);
-            posts[index].push(entry.title);
-            posts[index].push(entry.link);
-            posts[index].push(entry.pubDate);
-            posts[index].push(entry.creator);
-            posts[index].push(entry["content:encoded"].split("<p>")[1].split("</p>")[0].slice(0, 56) + "...");
-            posts[index].push(entry["content:encoded"].split("src=\"")[1].split("\"")[0]);
-        })
-        console.log(posts);
+        if (err) {
+            document.querySelector(".readmoreatmed").style.display = "block";
+            document.querySelector(".news").style.display = "none";
+        } else {
+            feed.items.forEach(function(entry, index) {
+                    posts.push([]);
+                    posts[index].push(entry.title);
+                    posts[index].push(entry.link);
+                    posts[index].push(entry.pubDate.replace(entry.pubDate.split(" ")[4], "").replace(entry.pubDate.split(" ")[5], ""));
+                    posts[index].push(entry.creator);
+                    posts[index].push(entry["content:encoded"].split("<p>")[1].split("</p>")[0].slice(0, 56) + "...");
+                    if (entry["content:encoded"].split("src=\"")[1].split("\"")[0].includes("https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=8a2c232f9a21") == false) {
+                        posts[index].push(entry["content:encoded"].split("src=\"")[1].split("\"")[0]);
+                    }
+                })
+                //console.log(posts);
+            if (posts.length == 2) {
+                document.querySelectorAll(".newscont .row")[0].style.visibility = "hidden";
+                assignpost(posts[0], document.querySelectorAll(".newscont .row")[1]);
+                assignpost(posts[1], document.querySelectorAll(".newscont .row")[2]);
+                document.querySelectorAll(".newscont .row")[3].style.visibility = "hidden";
+                document.querySelector(".news").style.display = "flex";
+                document.querySelector(".readmoreatmed").style.display = "none";
+            } else if (posts.length == 3) {
+                assignpost(posts[0], document.querySelectorAll(".newscont .row")[0]);
+                assignpost(posts[1], document.querySelectorAll(".newscont .row")[1]);
+                assignpost(posts[2], document.querySelectorAll(".newscont .row")[2]);
+                document.querySelectorAll(".newscont .row")[3].parentElement.style.display = "none";
+                document.querySelector(".news").style.display = "flex";
+                document.querySelector(".readmoreatmed").style.display = "none";
+            } else if (posts.length > 3) {
+                assignpost(posts[0], document.querySelectorAll(".newscont .row")[0]);
+                assignpost(posts[1], document.querySelectorAll(".newscont .row")[1]);
+                assignpost(posts[2], document.querySelectorAll(".newscont .row")[2]);
+                assignpost(posts[3], document.querySelectorAll(".newscont .row")[3]);
+                document.querySelector(".news").style.display = "flex";
+                document.querySelector(".readmoreatmed").style.display = "none";
+            } else {
+                document.querySelector(".readmoreatmed").style.display = "block";
+                document.querySelector(".news").style.display = "none";
+            }
+        }
     })
-    return posts;
+}
+
+function assignpost(post, element) {
+    element.querySelector(".newinnertitle").innerHTML = post[0] + " - " + post[2];
+    element.querySelector(".newfit").innerHTML = post[4];
+    element.parentElement.href = post[1];
+    if (post[5] != undefined) {
+        element.style.backgroundImage = "url('" + post[5] + "')";
+    }
 }
 
 window.onscroll = function() {

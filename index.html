@@ -40,7 +40,7 @@
                 <div class="option selected aboutoption" onclick="scrollto('.aboutcont');">About</div>
                 <div class="option newsoption" onclick="scrollto('.newscont');">News</div>
                 <div class="option faqoption" onclick="scrollto('.faqcont');">FAQ</div>
-                <div class="option teamoption" onclick="scrollto('.teamcont');">Team</div>
+                <div class="option teamoption" onclick="document.querySelector('.teamcont').scrollIntoView();">Team</div>
             </div>
             <div class="socials">
                 <a target="_blank" href="https://twitter.com/ArrowheadDev">
@@ -74,7 +74,7 @@
                     <div class="option selected aboutoption" onclick="scrollto('.aboutcont');">About</div>
                     <div class="option newsoption" onclick="scrollto('.newscont');">News</div>
                     <div class="option faqoption" onclick="scrollto('.faqcont');">FAQ</div>
-                    <div class="option teamoption" onclick="scrollto('.teamcont');">Team</div>
+                    <div class="option teamoption" onclick="document.querySelector('.teamcont').scrollIntoView();">Team</div>
                 </div>
                 <div class="socials">
                     <a target="_blank" href="https://twitter.com/ArrowheadDev">
@@ -140,10 +140,20 @@
                 </div>
             </div>
             <div class="newscont tab">
-                <div class="news container">
+                <div class="news container" style="display: none;">
                     <div class="title newstitle">News</div>
                     <div class="rowcont">
-                        <a target="_blank" rel="noreferrer" href="">
+                        <a target="_blank" rel="noreferrer">
+                            <div class="row">
+                                <div class="bottomnew">
+                                    <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds - 12.01.2001</div>
+                                    <div class="newfit">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a target="_blank" rel="noreferrer">
                             <div class="row">
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
@@ -153,7 +163,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a target="_blank" rel="noreferrer" href="">
+                        <a target="_blank" rel="noreferrer">
                             <div class="row">
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
@@ -163,17 +173,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a target="_blank" rel="noreferrer" href="">
-                            <div class="row">
-                                <div class="bottomnew">
-                                    <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
-                                    <div class="newfit">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a target="_blank" rel="noreferrer" href="">
+                        <a target="_blank" rel="noreferrer">
                             <div class="row">
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
@@ -185,6 +185,7 @@
                         </a>
                     </div>
                 </div>
+                <a target="_blank" class="readmoreatmed" rel="noreferrer" href="https://medium.com/@thetaxcollectorman/">Read More at Medium.com</a>
             </div>
             <div class="faqcont tab">
                 <div class="faq container">
