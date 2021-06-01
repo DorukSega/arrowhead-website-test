@@ -1,6 +1,5 @@
 :root {
-    /* 
-        Brand Colors 
+    /* Brand Colors 
     usage -> var(--black);
     */
     --black: #171717;
@@ -21,6 +20,10 @@
  ::-webkit-scrollbar-thumb {
     background: var(--inchworma);
     border-radius: 0.5vmin;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--inchworm);
 }
 
 a {

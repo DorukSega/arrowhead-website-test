@@ -1,3 +1,4 @@
+//Arrowhead
 function load() {
     //Internet Explorer
     if (navigator.userAgent.indexOf('Trident/') > 0 || navigator.userAgent.indexOf('MSIE ') > 0) {
