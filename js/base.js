@@ -134,6 +134,7 @@ window.onscroll = function() {
         });
         //changeanchor("");
     }
+    event.preventDefault();
 };
 
 function zoomtoimg(source) {
