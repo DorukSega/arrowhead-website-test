@@ -91,14 +91,10 @@ function assignpost(post, element) {
 }
 
 window.onscroll = function() {
-    try {
-        if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
-            document.querySelector('.fixedtopbar').style.visibility = "visible";
-        } else {
-            document.querySelector('.fixedtopbar').style.visibility = "hidden";
-        }
-    } catch (error) {
-
+    if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
+        document.querySelector('.fixedtopbar').style.visibility = "visible";
+    } else {
+        document.querySelector('.fixedtopbar').style.visibility = "hidden";
     }
     //
     if (document.documentElement.scrollTop >= document.querySelector('.newscont').offsetTop & document.documentElement.scrollTop < document.querySelector('.faqcont').offsetTop) {
@@ -108,7 +104,6 @@ window.onscroll = function() {
         document.querySelectorAll(".newsoption").forEach(function(val) {
             val.classList.add("selected");
         });
-        //changeanchor("news");
     } else if (document.documentElement.scrollTop >= document.querySelector('.faqcont').offsetTop & (document.documentElement.scrollTop < document.querySelector('.teamcont').offsetTop & (document.documentElement.scrollTop + window.innerHeight < document.documentElement.offsetHeight))) {
         document.querySelectorAll(".option").forEach(function(val) {
             val.classList.remove("selected");
@@ -116,7 +111,6 @@ window.onscroll = function() {
         document.querySelectorAll(".faqoption").forEach(function(val) {
             val.classList.add("selected");
         });
-        //changeanchor("faq");
     } else if ((document.documentElement.scrollTop >= document.querySelector('.teamcont').offsetTop) || (document.documentElement.scrollTop + window.innerHeight >= document.documentElement.offsetHeight)) {
         document.querySelectorAll(".option").forEach(function(val) {
             val.classList.remove("selected");
@@ -124,7 +118,6 @@ window.onscroll = function() {
         document.querySelectorAll(".teamoption").forEach(function(val) {
             val.classList.add("selected");
         });
-        //changeanchor("team");
     } else if (document.querySelector('.aboutoption').classList.contains("selected") == false) {
         document.querySelectorAll(".option").forEach(function(val) {
             val.classList.remove("selected");
@@ -132,7 +125,6 @@ window.onscroll = function() {
         document.querySelectorAll(".aboutoption").forEach(function(val) {
             val.classList.add("selected");
         });
-        //changeanchor("");
     }
     event.preventDefault();
 };
@@ -146,7 +138,6 @@ function previmg(direction) {
     var item = "";
     var titem = "";
     if (direction == "forward") {
-
         titem = document.querySelector(".prevtext:not(.hidden)").nextElementSibling;
         if (titem == null || titem.classList.contains("arrow")) {
             titem = document.querySelectorAll('.prevtext')[0];
@@ -155,7 +146,6 @@ function previmg(direction) {
             val.classList.add("hidden");
         });
         titem.classList.remove("hidden");
-
         item = document.querySelector(".previmg:not(.hidden)").nextElementSibling;
         if (item == null || item.classList.contains("prevbottom")) {
             item = document.querySelectorAll('.previmg')[0];
@@ -173,7 +163,6 @@ function previmg(direction) {
             val.classList.add("hidden");
         });
         titem.classList.remove("hidden");
-
         item = document.querySelector(".previmg:not(.hidden)").previousElementSibling;
         if (item == null) {
             item = document.querySelectorAll('.previmg')[document.querySelectorAll('.previmg').length - 1];
