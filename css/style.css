@@ -26,16 +26,8 @@
     background: var(--inchworm);
 }
 
-a {
-    color: unset;
-    text-decoration: none;
-}
-
-a:visited {
-    color: unset;
-    text-decoration: none;
-}
-
+a,
+a:visited,
 a:hover {
     color: unset;
     text-decoration: none;
