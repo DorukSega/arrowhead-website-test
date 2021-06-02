@@ -535,6 +535,21 @@ body {
     transform: unset!important;
 }
 
+.bottomtext {
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    font-size: 1vmax;
+}
+
+.bottomtext a {
+    color: var(--inchworm);
+}
+
+.bottomtext a:hover {
+    color: var(--white);
+}
+
 @-moz-document url-prefix() {
     /* This is for mozilla to have darker bottombar since it cant use blur */
     .bottombar {
