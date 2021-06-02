@@ -21,7 +21,7 @@ function load() {
 
 function scrollto(item) {
     document.querySelector(item).scrollIntoView();
-    scrollBy(0, -document.querySelector(".title").offsetHeight)
+    scrollBy(0, -document.querySelector(".title").offsetHeight);
 }
 
 function loadfeed() {
@@ -34,24 +34,24 @@ function loadfeed() {
     5: first image 
     */
     var posts = [];
-    let parser = new RSSParser();
+    var parser = new RSSParser();
     parser.parseURL('http://' + window.location.hostname + ':4050/medium', function(err, feed) {
         if (err) {
             document.querySelector(".readmoreatmed").style.display = "block";
             document.querySelector(".news").style.display = "none";
         } else {
             feed.items.forEach(function(entry, index) {
-                    posts.push([]);
-                    posts[index].push(entry.title);
-                    posts[index].push(entry.link);
-                    posts[index].push(entry.pubDate.replace(entry.pubDate.split(" ")[4], "").replace(entry.pubDate.split(" ")[5], ""));
-                    posts[index].push(entry.creator);
-                    posts[index].push(entry["content:encoded"].split("<p>")[1].split("</p>")[0].slice(0, 56) + "...");
-                    if (entry["content:encoded"].split("src=\"")[1].split("\"")[0].includes("https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=8a2c232f9a21") == false) {
-                        posts[index].push(entry["content:encoded"].split("src=\"")[1].split("\"")[0]);
-                    }
-                })
-                //console.log(posts);
+                posts.push([]);
+                posts[index].push(entry.title);
+                posts[index].push(entry.link);
+                posts[index].push(entry.pubDate.replace(entry.pubDate.split(" ")[4], "").replace(entry.pubDate.split(" ")[5], ""));
+                posts[index].push(entry.creator);
+                posts[index].push(entry["content:encoded"].split("<p>")[1].split("</p>")[0].slice(0, 56) + "...");
+                if (entry["content:encoded"].split("src=\"")[1].split("\"")[0].includes("https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=8a2c232f9a21") == false) {
+                    posts[index].push(entry["content:encoded"].split("src=\"")[1].split("\"")[0]);
+                }
+            });
+            //console.log(posts);
             if (posts.length == 2) {
                 document.querySelectorAll(".newscont .row")[0].style.visibility = "hidden";
                 assignpost(posts[0], document.querySelectorAll(".newscont .row")[1]);
@@ -78,7 +78,7 @@ function loadfeed() {
                 document.querySelector(".news").style.display = "none";
             }
         }
-    })
+    });
 }
 
 function assignpost(post, element) {
@@ -97,14 +97,14 @@ window.onscroll = function() {
         document.querySelector('.fixedtopbar').style.visibility = "hidden";
     }
     //
-    if (document.documentElement.scrollTop >= document.querySelector('.newscont').offsetTop & document.documentElement.scrollTop < document.querySelector('.faqcont').offsetTop) {
+    if (document.documentElement.scrollTop >= document.querySelector('.newscont').offsetTop && document.documentElement.scrollTop < document.querySelector('.faqcont').offsetTop) {
         document.querySelectorAll(".option").forEach(function(val) {
             val.classList.remove("selected");
         });
         document.querySelectorAll(".newsoption").forEach(function(val) {
             val.classList.add("selected");
         });
-    } else if (document.documentElement.scrollTop >= document.querySelector('.faqcont').offsetTop & (document.documentElement.scrollTop < document.querySelector('.teamcont').offsetTop & (document.documentElement.scrollTop + window.innerHeight < document.documentElement.offsetHeight))) {
+    } else if (document.documentElement.scrollTop >= document.querySelector('.faqcont').offsetTop && (document.documentElement.scrollTop < document.querySelector('.teamcont').offsetTop && (document.documentElement.scrollTop + window.innerHeight < document.documentElement.offsetHeight))) {
         document.querySelectorAll(".option").forEach(function(val) {
             val.classList.remove("selected");
         });
