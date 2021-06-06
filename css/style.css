@@ -360,8 +360,16 @@ body {
     flex-wrap: nowrap;
     text-align: left;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     flex: 1;
+}
+
+.peirow {
+    height: inherit;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .peoutrow {
@@ -398,6 +406,7 @@ body {
 .peoplename {
     border-bottom: 0.04vmax solid var(--inchworm);
     font-family: 'Overpass';
+    white-space: nowrap;
 }
 
 .peopleinfo {
@@ -414,7 +423,7 @@ body {
 
 .psocial {
     width: auto;
-    height: 3vmax;
+    height: 2.5vmax;
     fill: var(--white);
     border-radius: .4vmin;
 }
