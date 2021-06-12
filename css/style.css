@@ -255,6 +255,7 @@ body {
     border: unset;
     border-radius: 0;
     border-top: 0.05vmax solid var(--inchworm);
+    flex-direction: row;
 }
 
 .title {
@@ -317,6 +318,7 @@ body {
     justify-content: space-between;
     width: 100%;
     height: auto;
+    flex: 1;
 }
 
 .previmg {
@@ -325,6 +327,7 @@ body {
     height: auto;
     width: 100%;
     cursor: zoom-in;
+    flex: 1;
 }
 
 .previmg.hidden {
