@@ -430,6 +430,10 @@ body {
     border-radius: .4vmin;
 }
 
+.bcamp {
+    border-radius: unset;
+}
+
 .teamtitle {
     text-align: center;
 }
