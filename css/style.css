@@ -228,7 +228,7 @@ body {
 
 .about .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
@@ -251,6 +251,7 @@ body {
     height: auto;
     border: unset;
     border-radius: 0;
+    border-top: 0.05vmax solid var(--inchworm);
 }
 
 .title {
@@ -604,13 +605,6 @@ body {
     .bottombar,
     .topbar .toprow {
         width: 100%;
-    }
-    .about .row {
-        flex-direction: column;
-    }
-    .previmgcont {
-        border: unset;
-        border-top: 0.05vmax solid var(--inchworm);
     }
     .profileimg {
         height: 14vmin;
