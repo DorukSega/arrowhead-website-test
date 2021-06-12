@@ -91,41 +91,46 @@ function assignpost(post, element) {
 }
 
 window.onscroll = function() {
-    if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
-        document.querySelector('.fixedtopbar').style.visibility = "visible";
-    } else {
-        document.querySelector('.fixedtopbar').style.visibility = "hidden";
+    try {
+        if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
+            document.querySelector('.fixedtopbar').style.visibility = "visible";
+        } else {
+            document.querySelector('.fixedtopbar').style.visibility = "hidden";
+        }
+        //
+        if (document.documentElement.scrollTop >= document.querySelector('.newscont').offsetTop && document.documentElement.scrollTop < document.querySelector('.faqcont').offsetTop) {
+            document.querySelectorAll(".option").forEach(function(val) {
+                val.classList.remove("selected");
+            });
+            document.querySelectorAll(".newsoption").forEach(function(val) {
+                val.classList.add("selected");
+            });
+        } else if (document.documentElement.scrollTop >= document.querySelector('.faqcont').offsetTop && (document.documentElement.scrollTop < document.querySelector('.teamcont').offsetTop && (document.documentElement.scrollTop + window.innerHeight < document.documentElement.offsetHeight))) {
+            document.querySelectorAll(".option").forEach(function(val) {
+                val.classList.remove("selected");
+            });
+            document.querySelectorAll(".faqoption").forEach(function(val) {
+                val.classList.add("selected");
+            });
+        } else if ((document.documentElement.scrollTop >= document.querySelector('.teamcont').offsetTop) || (document.documentElement.scrollTop + window.innerHeight >= document.documentElement.offsetHeight)) {
+            document.querySelectorAll(".option").forEach(function(val) {
+                val.classList.remove("selected");
+            });
+            document.querySelectorAll(".teamoption").forEach(function(val) {
+                val.classList.add("selected");
+            });
+        } else if (document.querySelector('.aboutoption').classList.contains("selected") == false) {
+            document.querySelectorAll(".option").forEach(function(val) {
+                val.classList.remove("selected");
+            });
+            document.querySelectorAll(".aboutoption").forEach(function(val) {
+                val.classList.add("selected");
+            });
+        }
+    } catch (error) {
+
     }
-    //
-    if (document.documentElement.scrollTop >= document.querySelector('.newscont').offsetTop && document.documentElement.scrollTop < document.querySelector('.faqcont').offsetTop) {
-        document.querySelectorAll(".option").forEach(function(val) {
-            val.classList.remove("selected");
-        });
-        document.querySelectorAll(".newsoption").forEach(function(val) {
-            val.classList.add("selected");
-        });
-    } else if (document.documentElement.scrollTop >= document.querySelector('.faqcont').offsetTop && (document.documentElement.scrollTop < document.querySelector('.teamcont').offsetTop && (document.documentElement.scrollTop + window.innerHeight < document.documentElement.offsetHeight))) {
-        document.querySelectorAll(".option").forEach(function(val) {
-            val.classList.remove("selected");
-        });
-        document.querySelectorAll(".faqoption").forEach(function(val) {
-            val.classList.add("selected");
-        });
-    } else if ((document.documentElement.scrollTop >= document.querySelector('.teamcont').offsetTop) || (document.documentElement.scrollTop + window.innerHeight >= document.documentElement.offsetHeight)) {
-        document.querySelectorAll(".option").forEach(function(val) {
-            val.classList.remove("selected");
-        });
-        document.querySelectorAll(".teamoption").forEach(function(val) {
-            val.classList.add("selected");
-        });
-    } else if (document.querySelector('.aboutoption').classList.contains("selected") == false) {
-        document.querySelectorAll(".option").forEach(function(val) {
-            val.classList.remove("selected");
-        });
-        document.querySelectorAll(".aboutoption").forEach(function(val) {
-            val.classList.add("selected");
-        });
-    }
+
     event.preventDefault();
 };
 
