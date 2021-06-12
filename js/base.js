@@ -22,7 +22,6 @@ function load() {
 function scrollto(item) {
     document.querySelector(item).scrollIntoView();
     scrollBy(0, -document.querySelector(".title").offsetHeight);
-    event.preventDefault();
 }
 
 function loadfeed() {
@@ -92,7 +91,6 @@ function assignpost(post, element) {
 }
 
 window.onscroll = function() {
-    event.preventDefault();
     if (document.documentElement.scrollTop > document.querySelectorAll('.toprow')[1].offsetTop) {
         document.querySelector('.fixedtopbar').style.visibility = "visible";
     } else {

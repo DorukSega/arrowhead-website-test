@@ -34,7 +34,7 @@ a:hover {
 }
 
 body {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     color: var(--white);
     font-weight: 300;
     font-style: normal;
