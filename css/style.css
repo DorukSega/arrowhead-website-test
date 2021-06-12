@@ -257,7 +257,7 @@ body {
     border: unset;
     border-radius: 0;
     border-top: 0.05vmax solid var(--inchworm);
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .title {
