@@ -135,22 +135,25 @@ body {
 .playbtn {
     margin: auto;
     position: relative;
-    border: .4vmin solid var(--white);
+    background-color: var(--white);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     border-radius: .4vmin;
+    margin-top: 3vmin;
+    margin-bottom: 2vmin;
+    padding: 1.5vmin 5vmin 1.5vmin;
 }
 
 .playtext {
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--black);
 }
 
 .playbtn:hover {
-    border-color: var(--inchworm);
+    background-color: var(--inchworm);
 }
 
 .toprow {
