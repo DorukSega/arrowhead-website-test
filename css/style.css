@@ -361,8 +361,13 @@ body {
     flex-wrap: nowrap;
     text-align: left;
     flex-direction: row;
-    justify-content: space-evenly;
     flex: 1;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.perow:nth-child(3) {
+    justify-content: space-around;
 }
 
 .peirow {
