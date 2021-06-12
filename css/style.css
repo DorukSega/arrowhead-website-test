@@ -112,6 +112,7 @@ body {
     display: flex;
     justify-content: flex-end;
     flex: 2;
+    padding-right: 2vmin;
 }
 
 .sicons {
