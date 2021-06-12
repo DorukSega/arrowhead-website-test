@@ -128,7 +128,7 @@ window.onscroll = function() {
             });
         }
     } catch (error) {
-
+        console.log(error);
     }
 
     event.preventDefault();
