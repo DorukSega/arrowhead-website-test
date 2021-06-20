@@ -406,7 +406,7 @@ body {
 .profileimg {
     position: relative;
     width: auto;
-    height: 10vmax;
+    height: 10vw;
     border: .425vmin solid var(--inchworm);
     border-radius: .5vmin;
 }
@@ -418,7 +418,8 @@ body {
     justify-content: center;
     margin-top: auto;
     margin-bottom: auto;
-    height: 8vmax;
+    height: 8vw;
+    width: auto;
 }
 
 .peoplename {
