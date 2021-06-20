@@ -237,7 +237,7 @@ body {
 .about .row {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .about .collumn {
@@ -261,6 +261,7 @@ body {
     border-radius: 0;
     border-top: 0.05vmax solid var(--inchworm);
     flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .title {
@@ -306,7 +307,7 @@ body {
     font-weight: 100;
     padding: 1vmin;
     font-style: italic;
-    font-size: 1.4vmax;
+    font-size: 1.85vmax;
     white-space: nowrap;
     min-width: 40vmin;
 }
@@ -424,7 +425,8 @@ body {
 
 .peopleinfo {
     padding-top: .5vmin;
-    font-size: 1vmax;
+    font-size: 1.15vmax;
+    font-weight: 500;
     margin: 1vmin 0 1vmin 0;
 }
 
@@ -439,10 +441,6 @@ body {
     height: 2.5vmax;
     fill: var(--white);
     border-radius: .4vmin;
-}
-
-.bcamp {
-    border-radius: unset;
 }
 
 .teamtitle {
