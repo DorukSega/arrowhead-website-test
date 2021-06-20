@@ -27,16 +27,15 @@ function scrollto(item) {
 function opentab(url) {
     window.open(url, "_blank");
 }
-
+/* 
 function loadfeed() {
-    /* guidline for the array:
+    guidline for the array:
     0: title
     1: link
     2: date
     3: creator
     4: first paragraph
     5: first image 
-    */
     var posts = [];
     var parser = new RSSParser();
     parser.parseURL('http://' + window.location.hostname + ':4050/medium', function(err, feed) {
@@ -92,7 +91,7 @@ function assignpost(post, element) {
     if (post[5] != undefined) {
         element.style.backgroundImage = "url('" + post[5] + "')";
     }
-}
+} */
 
 window.onscroll = function() {
     try {
