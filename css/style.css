@@ -379,7 +379,6 @@ body {
 }
 
 .peirow {
-    height: inherit;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -400,6 +399,7 @@ body {
     flex-wrap: nowrap;
     flex-direction: row;
     padding: 2vmin;
+    height: fit-content;
 }
 
 .profileimg {
@@ -415,9 +415,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: calc((100%/4)*3);
+    width: auto;
 }
 
 .peoplename {
+    height: calc(100%/3);
     border-bottom: 0.04vmax solid var(--inchworm);
     font-family: 'Overpass';
     white-space: nowrap;
@@ -427,18 +432,23 @@ body {
     padding-top: .5vmin;
     font-size: 1.15vmax;
     font-weight: 500;
-    margin: 1vmin 0 1vmin 0;
+    margin: .5vmin 0 .5vmin 0;
+    white-space: normal;
 }
 
 .peoplescont {
-    height: auto;
-    width: fit-content;
+    height: calc(100%/3);
     white-space: nowrap;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2%;
 }
 
 .psocial {
-    width: auto;
-    height: 2.5vmax;
+    flex: 1;
+    height: 100%;
     fill: var(--white);
     border-radius: .4vmin;
 }
