@@ -24,6 +24,10 @@ function scrollto(item) {
     scrollBy(0, -document.querySelector(".title").offsetHeight);
 }
 
+function opentab(url) {
+    window.open(url, "_blank");
+}
+
 function loadfeed() {
     /* guidline for the array:
     0: title

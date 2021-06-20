@@ -197,6 +197,7 @@ body {
 .sicons:hover,
 .psocial:hover {
     fill: var(--inchworm);
+    cursor: pointer;
 }
 
 .bottombar {
@@ -399,7 +400,7 @@ body {
     flex-wrap: nowrap;
     flex-direction: row;
     padding: 2vmin;
-    height: fit-content;
+    height: auto;
 }
 
 .profileimg {
@@ -417,27 +418,24 @@ body {
     justify-content: center;
     margin-top: auto;
     margin-bottom: auto;
-    height: calc((100%/4)*3);
-    width: auto;
+    height: 8vmax;
 }
 
 .peoplename {
-    height: calc(100%/3);
     border-bottom: 0.04vmax solid var(--inchworm);
     font-family: 'Overpass';
     white-space: nowrap;
 }
 
 .peopleinfo {
-    padding-top: .5vmin;
     font-size: 1.15vmax;
     font-weight: 500;
-    margin: .5vmin 0 .5vmin 0;
+    margin: 1vmin 0 1vmin 0;
     white-space: normal;
 }
 
 .peoplescont {
-    height: calc(100%/3);
+    height: calc(100%/2.5);
     white-space: nowrap;
     display: flex;
     justify-content: left;
@@ -447,7 +445,6 @@ body {
 }
 
 .psocial {
-    flex: 1;
     height: 100%;
     fill: var(--white);
     border-radius: .4vmin;
