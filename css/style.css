@@ -399,27 +399,30 @@ body {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    padding: 2vmin;
+    margin: 1.2vmin 1vmin 1.2vmin;
     height: auto;
+}
+
+.profileimg,
+.peopleright {
+    height: 12vw;
 }
 
 .profileimg {
     position: relative;
     width: auto;
-    height: 10vw;
     border: .425vmin solid var(--inchworm);
     border-radius: .5vmin;
 }
 
 .peopleright {
-    padding-left: 1vmin;
+    margin-left: 1vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: auto;
     margin-bottom: auto;
-    height: 10vw;
-    width: auto;
+    width: fit-content;
 }
 
 .peoplename {
@@ -429,9 +432,9 @@ body {
 }
 
 .peopleinfo {
-    font-size: 1.15vmax;
+    font-size: 1.1vmax;
     font-weight: 500;
-    margin: 1vmin 0 1vmin 0;
+    margin: 1vmin 0 1vmin;
     white-space: normal;
 }
 
