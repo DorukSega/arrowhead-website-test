@@ -552,23 +552,25 @@ body {
     margin: unset;
 }
 
-.newfit {
-    text-align: left;
-    font-size: 1vmax;
-    padding: .4vmax;
-    overflow: hidden;
-}
-
 .readmoreatmed {
     padding: 4vmin;
-    border-radius: .4vmin;
+    border-radius: .8vmin;
     font-size: 3.5vmax;
     text-align: center;
+    text-decoration: underline;
 }
 
 .readmoreatmed:hover {
     color: var(--inchworm);
     transform: unset!important;
+    text-decoration: underline;
+}
+
+.newfit {
+    text-align: left;
+    font-size: 1vmax;
+    padding: .4vmax;
+    overflow: hidden;
 }
 
 .bottomtext {
