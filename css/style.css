@@ -400,13 +400,13 @@ body {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    margin: 1.2vmin 1vmin 1.2vmin;
+    margin: 2vmin 1vmin 2vmin;
     height: auto;
 }
 
 .profileimg,
 .peopleright {
-    height: 12vw;
+    height: 8vw;
 }
 
 .profileimg {
@@ -638,5 +638,9 @@ body {
     }
     .profileimg {
         height: 14vmin;
+    }
+    .profileimg,
+    .peopleright {
+        height: 13vw;
     }
 }
