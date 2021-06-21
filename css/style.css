@@ -3,7 +3,7 @@
     usage -> var(--black);
     */
     --black: #171717;
-    --inchworma: #b2ec5d26;
+    --inchworma: #b2ec5d30;
     --inchworm: #b2ec5d;
     --white: #e8e8e8;
     --dwhite: #ccc;
@@ -24,6 +24,16 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--inchworm);
+}
+
+::-moz-selection {
+    color: var(--white);
+    background: var(--inchworma);
+}
+
+ ::selection {
+    color: var(--white);
+    background: var(--inchworma);
 }
 
 a,
