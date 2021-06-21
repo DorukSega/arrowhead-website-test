@@ -30,6 +30,7 @@ a,
 a:visited,
 a:hover {
     color: unset;
+    fill: unset;
     text-decoration: none;
 }
 
