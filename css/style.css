@@ -41,6 +41,16 @@ a:hover {
     -o-user-drag: none;
 }
 
+img,
+.toprow,
+.playbtn,
+.bottomtext {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body {
     scroll-behavior: auto;
     color: var(--white);
@@ -125,14 +135,6 @@ body {
     display: flex;
 }
 
-
-/*  Unused play btn, probably will be implemented on release.
-    It needs a place for it to be, probably a new tab just for release
-<div class="playbtn"> <!-- Enable on release -->
-    <div class="playtext">Play!</div>
-</div> 
-*/
-
 .playbtn {
     margin: auto;
     position: relative;
@@ -163,10 +165,6 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .topbar .toprow {
@@ -580,6 +578,7 @@ body {
     text-align: center;
     color: var(--white);
     font-size: 1vmax;
+    padding: 1vmin;
 }
 
 .bottomtext a {
