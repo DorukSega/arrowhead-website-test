@@ -1,8 +1,10 @@
 //Arrowhead
 function load() {
     //Internet Explorer
-    if (navigator.userAgent.indexOf('Trident/') > 0 || navigator.userAgent.indexOf('MSIE ') > 0) { document.body.innerHTML = "<h1 style='font-size: 100px;'>ARROWHEAD</h1><h2 style='font-size: 50px;'>About</h2><h3 style='font-size: 25px;'>A classified Half-Life 2 mod about familiar places and unfamiliar dangers.</h3><h2 style='font-size: 50px;'>Links</h2><h3 style='font-size: 25px;'><a target='_blank' rel='noreferrer' href='https://twitter.com/ArrowheadDev'>Twitter</a></h3><h1>Internet Explorer 🎉</h1>";
-        document.body.style.textAlign = "center"; }
+    if (navigator.userAgent.indexOf('Trident/') > 0 || navigator.userAgent.indexOf('MSIE ') > 0) {
+        document.body.innerHTML = "<h1 style='font-size: 100px;'>ARROWHEAD</h1><h2 style='font-size: 50px;'>About</h2><h3 style='font-size: 25px;'>A classified Half-Life 2 mod about familiar places and unfamiliar dangers.</h3><h2 style='font-size: 50px;'>Links</h2><h3 style='font-size: 25px;'><a target='_blank' rel='noreferrer' href='https://twitter.com/ArrowheadDev'>Twitter</a></h3><h1>Internet Explorer 🎉</h1>";
+        document.body.style.textAlign = "center";
+    }
     //I guess this is a hidden feature now because
     //changing the anchor of the site is very performance intensive
     if (window.location.hash == "#news") {
@@ -19,10 +21,6 @@ function load() {
 function scrollto(item) {
     document.querySelector(item).scrollIntoView();
     scrollBy(0, -document.querySelector(".title").offsetHeight);
-}
-
-function opentab(url) {
-    window.open(url, "_blank");
 }
 
 window.onscroll = function() {
