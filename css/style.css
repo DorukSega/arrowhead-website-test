@@ -454,7 +454,7 @@ body {
     justify-content: left;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 2%;
+    gap: .5vmin;
 }
 
 .psocial {
