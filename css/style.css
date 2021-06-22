@@ -54,7 +54,9 @@ a:hover {
 img,
 .toprow,
 .playbtn,
-.bottomtext {
+.bottomtext,
+.previmgcont,
+.readmoreatmed {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
