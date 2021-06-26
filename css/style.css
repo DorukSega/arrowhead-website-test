@@ -1,7 +1,5 @@
 :root {
-    /* Brand Colors 
-    usage -> var(--black);
-    */
+    /* Brand Colors */
     --black: #171717;
     --inchworma: #b2ec5d30;
     --inchworm: #b2ec5d;
@@ -26,12 +24,8 @@
     background: var(--inchworm);
 }
 
-::-moz-selection {
-    color: var(--white);
-    background: var(--inchworma);
-}
-
- ::selection {
+::-moz-selection,
+::selection {
     color: var(--white);
     background: var(--inchworma);
 }
