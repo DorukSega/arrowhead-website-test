@@ -73,6 +73,7 @@ body {
     font-size: 1.5vmax;
     overflow-x: hidden;
     overflow-y: auto;
+    overscroll-behavior: contain;
     background-color: var(--black);
 }
 

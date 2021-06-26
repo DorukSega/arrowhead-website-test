@@ -39,6 +39,7 @@ function remvis() {
     document.querySelector(".faqoption").classList.remove("selected");
     document.querySelector(".teamoption").classList.remove("selected");
 }
+
 document.addEventListener('scroll', () => {
     if (window.scrollY >= document.querySelector('.aboutcont').offsetTop && window.scrollY < document.querySelector('.newscont').offsetTop) {
         remvis();
@@ -56,7 +57,7 @@ document.addEventListener('scroll', () => {
         remvis();
         document.querySelector(".aboutoption").classList.add("selected");
     }
-})
+});
 
 function zoomtoimg(source) {
     document.querySelector('.previmglarge').src = source;
