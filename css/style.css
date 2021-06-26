@@ -173,36 +173,35 @@ body {
 }
 
 .toprow {
-    margin-top: 2vmin;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.topbar .toprow {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     width: 70%;
+    justify-content: space-between;
+    padding: 2vmin 1vmin 0;
+    margin: auto;
+    transition-duration: .15s;
+    transition-timing-function: ease;
 }
 
-.toprow .logo,
-.fixedtopbar .logo {
+.toprow .logo {
     height: auto;
     width: 30%;
     flex: 2;
     margin: auto;
+    visibility: hidden;
+}
+
+.fixedtopbar .logo {
+    visibility: visible;
 }
 
 .fixedtopbar {
-    position: fixed;
     width: 100%;
     padding: 1vmin;
-    z-index: 100;
     background-color: rgba(23, 23, 23, .98);
-    margin: unset;
-}
-
-.fixedtopbar .socials {
-    padding-right: 2vmin;
-    margin: auto;
 }
 
 .sicons:hover,
