@@ -24,7 +24,11 @@
     background: var(--inchworm);
 }
 
-::-moz-selection,
+::-moz-selection{
+    color: var(--white);
+    background: var(--inchworma);	
+}
+
 ::selection {
     color: var(--white);
     background: var(--inchworma);
