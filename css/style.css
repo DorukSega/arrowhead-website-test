@@ -462,10 +462,14 @@ body {
     gap: .5vmin;
 }
 
+.peoplescont a {
+    height: 100%;
+}
+
 .psocial {
     height: 100%;
     fill: var(--white);
-    border-radius: .4vmin;
+    border-radius: .2vmin;
 }
 
 .teamtitle {
@@ -530,6 +534,7 @@ body {
     justify-content: center;
     margin: auto;
     width: 100%;
+    height: fit-content;
 }
 
 .newscont a {
@@ -546,7 +551,7 @@ body {
     justify-content: flex-end;
     flex-direction: column;
     flex-wrap: nowrap;
-    height: 18vmax;
+    height: 40vmin;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -623,7 +628,7 @@ body {
 @-moz-document url-prefix() {
     /* This is for mozilla to have darker bottombar since it cant use blur */
     .bottombar {
-        background-color: rgba(23, 23, 23, .85);
+        background-color: rgba(23, 23, 23, .70);
     }
 }
 
