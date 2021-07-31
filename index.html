@@ -37,6 +37,7 @@
                 </svg>
             </div>
         </div>
+        <div class="scroll"></div>
         <div class="toprow">
             <div class="logo">
                 <svg class="logosvg" viewBox="0 0 2500 306">
@@ -44,10 +45,10 @@
                 </svg>
             </div>
             <div class="pageopt">
-                <div class="option selected aboutoption" onclick="scrollto('.aboutcont');">About</div>
-                <div class="option newsoption" onclick="scrollto('.newscont');">News</div>
-                <div class="option faqoption" onclick="scrollto('.faqcont');">FAQ</div>
-                <div class="option teamoption" onclick="scrollto('.teamcont');">Team</div>
+                <a href="#about" class="option selected aboutoption">About</a>
+                <a href="#news" class="option newsoption">News</a>
+                <a href="#faq" class="option faqoption">FAQ</a>
+                <a href="#team" class="option teamoption">Team</a>
             </div>
             <div class="socials">
                 <a target="_blank" rel="noreferrer" href="https://twitter.com/ArrowheadDev">
@@ -64,7 +65,7 @@
             </div>
         </div>
         <div class="bottombar">
-            <div class="aboutcont tab">
+            <div class="aboutcont tab" id="about">
                 <div class="about container">
                     <div class="title">About</div>
                     <div class="row">
@@ -110,21 +111,21 @@
                     </div>
                 </div>
             </div>
-            <div class="newscont tab">
-                <div class="news container" style="display: none;">
+            <div class="newscont" id="news">
+                <div class="news container">
                     <div class="title newstitle">News</div>
                     <div class="rowcont">
-                        <a target="_blank" rel="noreferrer">
+                        <a href="https://thetaxcollectorman.medium.com/arrowhead-something-stirs-in-the-clouds-a360354e1a41" target="_blank" rel="noreferrer">
                             <div class="row">
                                 <div class="bottomnew">
-                                    <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds - 12.01.2001</div>
+                                    <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
                                     <div class="newfit">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                                        Six months ago, the soon-to-be Arrowhead team was watching a movie together...
                                     </div>
                                 </div>
                             </div>
                         </a>
-                        <a target="_blank" rel="noreferrer">
+                        <!-- <a target="_blank" rel="noreferrer">
                             <div class="row">
                                 <div class="bottomnew">
                                     <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
@@ -143,22 +144,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a target="_blank" rel="noreferrer">
-                            <div class="row">
-                                <div class="bottomnew">
-                                    <div class="title newinnertitle">Arrowhead: Something Stirs in the Clouds</div>
-                                    <div class="newfit">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
-                <a target="_blank" class="readmoreatmed" rel="noreferrer" href="https://thetaxcollectorman.medium.com/arrowhead-something-stirs-in-the-clouds-a360354e1a41">Read More at Medium.com</a>
+                <a target="_blank" style="display: none;" class="readmoreatmed" rel="noreferrer" href="https://thetaxcollectorman.medium.com/arrowhead-something-stirs-in-the-clouds-a360354e1a41">Read More at Medium.com</a>
             </div>
-            <div class="faqcont tab">
+            <div class="faqcont tab" id="faq">
                 <div class="faq container">
                     <div class="title faqtitle">FAQ</div>
                     <div class="row">
@@ -229,7 +220,7 @@
 
                 </div>
             </div>
-            <div class="teamcont tab">
+            <div class="teamcont tab" id="team">
                 <div class="team container">
                     <div class="peoutrow">
                         <div class="title teamtitle">Team</div>

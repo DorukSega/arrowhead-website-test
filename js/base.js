@@ -1,16 +1,5 @@
 //Arrowhead
 function load() {
-    //I guess this is a hidden feature now because
-    //changing the anchor of the site is very performance intensive
-    if (window.location.hash == "#news") {
-        scrollto('.newscont');
-    } else if (window.location.hash == "#faq") {
-        scrollto('.faqcont');
-    } else if (window.location.hash == "#team") {
-        scrollto('.teamcont');
-    } else if (window.location.hash == "#about") {
-        scrollto('.aboutcont');
-    }
     //detects stickyness
     var observer = new IntersectionObserver(function(entries) {
         if (entries[0].intersectionRatio === 0)
@@ -20,36 +9,42 @@ function load() {
     }, {
         threshold: [0, 1]
     });
-    observer.observe(document.querySelector(".topbar"));
-}
-
-function scrollto(item) {
-    document.querySelector(item).scrollIntoView();
-    scrollBy(0, -document.querySelector(".title").offsetHeight);
-}
-
-function remvis() {
-    document.querySelector(".aboutoption").classList.remove("selected");
-    document.querySelector(".newsoption").classList.remove("selected");
-    document.querySelector(".faqoption").classList.remove("selected");
-    document.querySelector(".teamoption").classList.remove("selected");
+    observer.observe(document.querySelector(".scroll"));
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 }
 
 document.addEventListener('scroll', () => {
     if (window.scrollY >= document.querySelector('.aboutcont').offsetTop && window.scrollY < document.querySelector('.newscont').offsetTop) {
-        remvis();
+        document.querySelector(".newsoption").classList.remove("selected");
+        document.querySelector(".faqoption").classList.remove("selected");
+        document.querySelector(".teamoption").classList.remove("selected");
         document.querySelector(".aboutoption").classList.add("selected");
     } else if (window.scrollY >= document.querySelector('.newscont').offsetTop && window.scrollY < document.querySelector('.faqcont').offsetTop) {
-        remvis();
+        document.querySelector(".aboutoption").classList.remove("selected");
+        document.querySelector(".faqoption").classList.remove("selected");
+        document.querySelector(".teamoption").classList.remove("selected");
         document.querySelector(".newsoption").classList.add("selected");
     } else if (window.scrollY >= document.querySelector('.faqcont').offsetTop && window.scrollY < document.querySelector('.teamcont').offsetTop) {
-        remvis();
+        document.querySelector(".aboutoption").classList.remove("selected");
+        document.querySelector(".newsoption").classList.remove("selected");
+        document.querySelector(".teamoption").classList.remove("selected");
         document.querySelector(".faqoption").classList.add("selected");
     } else if (window.scrollY >= document.querySelector('.teamcont').offsetTop) {
-        remvis();
+        document.querySelector(".aboutoption").classList.remove("selected");
+        document.querySelector(".newsoption").classList.remove("selected");
+        document.querySelector(".faqoption").classList.remove("selected");
         document.querySelector(".teamoption").classList.add("selected");
     } else {
-        remvis();
+        document.querySelector(".newsoption").classList.remove("selected");
+        document.querySelector(".faqoption").classList.remove("selected");
+        document.querySelector(".teamoption").classList.remove("selected");
         document.querySelector(".aboutoption").classList.add("selected");
     }
 });
