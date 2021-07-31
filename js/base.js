@@ -21,31 +21,31 @@ function load() {
 }
 
 document.addEventListener('scroll', () => {
-    if (window.scrollY >= document.querySelector('.aboutcont').offsetTop && window.scrollY < document.querySelector('.newscont').offsetTop) {
-        document.querySelector(".newsoption").classList.remove("selected");
-        document.querySelector(".faqoption").classList.remove("selected");
-        document.querySelector(".teamoption").classList.remove("selected");
-        document.querySelector(".aboutoption").classList.add("selected");
-    } else if (window.scrollY >= document.querySelector('.newscont').offsetTop && window.scrollY < document.querySelector('.faqcont').offsetTop) {
-        document.querySelector(".aboutoption").classList.remove("selected");
-        document.querySelector(".faqoption").classList.remove("selected");
-        document.querySelector(".teamoption").classList.remove("selected");
-        document.querySelector(".newsoption").classList.add("selected");
-    } else if (window.scrollY >= document.querySelector('.faqcont').offsetTop && window.scrollY < document.querySelector('.teamcont').offsetTop) {
-        document.querySelector(".aboutoption").classList.remove("selected");
-        document.querySelector(".newsoption").classList.remove("selected");
-        document.querySelector(".teamoption").classList.remove("selected");
-        document.querySelector(".faqoption").classList.add("selected");
-    } else if (window.scrollY >= document.querySelector('.teamcont').offsetTop) {
-        document.querySelector(".aboutoption").classList.remove("selected");
-        document.querySelector(".newsoption").classList.remove("selected");
-        document.querySelector(".faqoption").classList.remove("selected");
-        document.querySelector(".teamoption").classList.add("selected");
+    if (window.scrollY >= document.querySelector('#about').offsetTop && window.scrollY < document.querySelector('#news').offsetTop) {
+        document.querySelector(".option[href*='#about']").classList.add("selected");
+        document.querySelector(".option[href*='#news']").classList.remove("selected");
+        document.querySelector(".option[href*='#faq']").classList.remove("selected");
+        document.querySelector(".option[href*='#team']").classList.remove("selected");
+    } else if (window.scrollY >= document.querySelector('#news').offsetTop && window.scrollY < document.querySelector('#faq').offsetTop) {
+        document.querySelector(".option[href*='#about']").classList.remove("selected");
+        document.querySelector(".option[href*='#news']").classList.add("selected");
+        document.querySelector(".option[href*='#faq']").classList.remove("selected");
+        document.querySelector(".option[href*='#team']").classList.remove("selected");
+    } else if (window.scrollY >= document.querySelector('#faq').offsetTop && window.scrollY < document.querySelector('#team').offsetTop) {
+        document.querySelector(".option[href*='#about']").classList.remove("selected");
+        document.querySelector(".option[href*='#news']").classList.remove("selected");
+        document.querySelector(".option[href*='#faq']").classList.add("selected");
+        document.querySelector(".option[href*='#team']").classList.remove("selected");
+    } else if (window.scrollY >= document.querySelector('#team').offsetTop || window.scrollY == window.pageYOffset) {
+        document.querySelector(".option[href*='#about']").classList.remove("selected");
+        document.querySelector(".option[href*='#news']").classList.remove("selected");
+        document.querySelector(".option[href*='#faq']").classList.remove("selected");
+        document.querySelector(".option[href*='#team']").classList.add("selected");
     } else {
-        document.querySelector(".newsoption").classList.remove("selected");
-        document.querySelector(".faqoption").classList.remove("selected");
-        document.querySelector(".teamoption").classList.remove("selected");
-        document.querySelector(".aboutoption").classList.add("selected");
+        document.querySelector(".option[href*='#about']").classList.add("selected");
+        document.querySelector(".option[href*='#news']").classList.remove("selected");
+        document.querySelector(".option[href*='#faq']").classList.remove("selected");
+        document.querySelector(".option[href*='#team']").classList.remove("selected");
     }
 });
 
