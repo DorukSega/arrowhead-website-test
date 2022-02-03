@@ -50,7 +50,7 @@ window.onload = () => {
             faq.classList.remove("selected");
             team.classList.remove("selected");
         }
-    });
+    }, false);
 };
 
 
