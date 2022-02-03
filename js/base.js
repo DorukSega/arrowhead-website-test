@@ -1,7 +1,7 @@
 //Arrowhead
-function load() {
+window.onload = () => {
     //detects stickyness
-    var observer = new IntersectionObserver(function(entries) {
+    var observer = new IntersectionObserver(function (entries) {
         if (entries[0].intersectionRatio === 0)
             document.querySelector(".toprow").classList.add("fixedtopbar");
         else if (entries[0].intersectionRatio === 1)
@@ -10,44 +10,49 @@ function load() {
         threshold: [0, 1]
     });
     observer.observe(document.querySelector(".scroll"));
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
     });
-}
+    document.querySelectorAll(".previmg").forEach(e => e.addEventListener("click", () => zoomtoimg(e.src))); //previmgclick
+    const about = document.querySelector(".option[href*='#about']"), news = document.querySelector(".option[href*='#news']"), faq = document.querySelector(".option[href*='#faq']"), team = document.querySelector(".option[href*='#team']");
+    const cAbout = document.querySelector('#about'), cNews = document.querySelector('#news'), cFaq = document.querySelector('#faq'), cTeam = document.querySelector('#team');
 
-document.addEventListener('scroll', () => {
-    if (window.scrollY >= document.querySelector('#about').offsetTop && window.scrollY < document.querySelector('#news').offsetTop) {
-        document.querySelector(".option[href*='#about']").classList.add("selected");
-        document.querySelector(".option[href*='#news']").classList.remove("selected");
-        document.querySelector(".option[href*='#faq']").classList.remove("selected");
-        document.querySelector(".option[href*='#team']").classList.remove("selected");
-    } else if (window.scrollY >= document.querySelector('#news').offsetTop && window.scrollY < document.querySelector('#faq').offsetTop) {
-        document.querySelector(".option[href*='#about']").classList.remove("selected");
-        document.querySelector(".option[href*='#news']").classList.add("selected");
-        document.querySelector(".option[href*='#faq']").classList.remove("selected");
-        document.querySelector(".option[href*='#team']").classList.remove("selected");
-    } else if (window.scrollY >= document.querySelector('#faq').offsetTop && window.scrollY < document.querySelector('#team').offsetTop) {
-        document.querySelector(".option[href*='#about']").classList.remove("selected");
-        document.querySelector(".option[href*='#news']").classList.remove("selected");
-        document.querySelector(".option[href*='#faq']").classList.add("selected");
-        document.querySelector(".option[href*='#team']").classList.remove("selected");
-    } else if (window.scrollY >= document.querySelector('#team').offsetTop || window.scrollY == window.pageYOffset) {
-        document.querySelector(".option[href*='#about']").classList.remove("selected");
-        document.querySelector(".option[href*='#news']").classList.remove("selected");
-        document.querySelector(".option[href*='#faq']").classList.remove("selected");
-        document.querySelector(".option[href*='#team']").classList.add("selected");
-    } else {
-        document.querySelector(".option[href*='#about']").classList.add("selected");
-        document.querySelector(".option[href*='#news']").classList.remove("selected");
-        document.querySelector(".option[href*='#faq']").classList.remove("selected");
-        document.querySelector(".option[href*='#team']").classList.remove("selected");
-    }
-});
+    window.addEventListener('scroll', () => {
+        const winScrolly = window.scrollY;
+        if (winScrolly >= cAbout.offsetTop && winScrolly < cNews.offsetTop) {
+            about.classList.add("selected");
+            news.classList.remove("selected");
+            faq.classList.remove("selected");
+            team.classList.remove("selected");
+        } else if (winScrolly >= cNews.offsetTop && winScrolly < cFaq.offsetTop) {
+            about.classList.remove("selected");
+            news.classList.add("selected");
+            faq.classList.remove("selected");
+            team.classList.remove("selected");
+        } else if (winScrolly >= cFaq.offsetTop && winScrolly < cTeam.offsetTop) {
+            about.classList.remove("selected");
+            news.classList.remove("selected");
+            faq.classList.add("selected");
+            team.classList.remove("selected");
+        } else if (winScrolly >= cTeam.offsetTop || winScrolly == window.pageYOffset) {
+            about.classList.remove("selected");
+            news.classList.remove("selected");
+            faq.classList.remove("selected");
+            team.classList.add("selected");
+        } else {
+            about.classList.add("selected");
+            news.classList.remove("selected");
+            faq.classList.remove("selected");
+            team.classList.remove("selected");
+        }
+    });
+};
+
 
 function zoomtoimg(source) {
     document.querySelector('.previmglarge').src = source;
@@ -55,41 +60,20 @@ function zoomtoimg(source) {
 }
 
 function previmg(direction) {
-    var item = "";
-    var titem = "";
+    const prevtextVis = document.querySelector(".prevtext:not(.hidden)"), previmgVis = document.querySelector(".previmg:not(.hidden)");
     if (direction == "forward") {
-        titem = document.querySelector(".prevtext:not(.hidden)").nextElementSibling;
-        if (titem == null || titem.classList.contains("arrow")) {
-            titem = document.querySelectorAll('.prevtext')[0];
-        }
-        document.querySelectorAll(".prevtext:not(.hidden)").forEach(function(val) {
-            val.classList.add("hidden");
-        });
-        titem.classList.remove("hidden");
-        item = document.querySelector(".previmg:not(.hidden)").nextElementSibling;
-        if (item == null || item.classList.contains("prevbottom")) {
-            item = document.querySelectorAll('.previmg')[0];
-        }
-        document.querySelectorAll(".previmg:not(.hidden)").forEach(function(val) {
-            val.classList.add("hidden");
-        });
-        item.classList.remove("hidden");
+        const tItem = !prevtextVis.nextElementSibling || prevtextVis.nextElementSibling.classList.contains("arrow") ? document.querySelector('.prevtext') : prevtextVis.nextElementSibling;
+        const iItem = !previmgVis.nextElementSibling || previmgVis.nextElementSibling.classList.contains("prevbottom") ? document.querySelector('.previmg') : previmgVis.nextElementSibling;
+        prevtextVis.classList.add("hidden");
+        tItem.classList.remove("hidden");
+        previmgVis.classList.add("hidden");
+        iItem.classList.remove("hidden");
     } else if (direction == "back") {
-        titem = document.querySelector(".prevtext:not(.hidden)").previousElementSibling;
-        if (titem == null || titem.classList.contains("arrow")) {
-            titem = document.querySelectorAll('.prevtext')[document.querySelectorAll('.prevtext').length - 1];
-        }
-        document.querySelectorAll(".prevtext:not(.hidden)").forEach(function(val) {
-            val.classList.add("hidden");
-        });
-        titem.classList.remove("hidden");
-        item = document.querySelector(".previmg:not(.hidden)").previousElementSibling;
-        if (item == null) {
-            item = document.querySelectorAll('.previmg')[document.querySelectorAll('.previmg').length - 1];
-        }
-        document.querySelectorAll(".previmg:not(.hidden)").forEach(function(val) {
-            val.classList.add("hidden");
-        });
-        item.classList.remove("hidden");
+        const tItem = !prevtextVis.previousElementSibling || prevtextVis.previousElementSibling.classList.contains("arrow") ? document.querySelectorAll('.prevtext')[document.querySelectorAll('.prevtext').length - 1] : prevtextVis.previousElementSibling;
+        const iItem = !previmgVis.previousElementSibling ? document.querySelectorAll('.previmg')[document.querySelectorAll('.previmg').length - 1] : previmgVis.previousElementSibling;
+        prevtextVis.classList.add("hidden");
+        tItem.classList.remove("hidden");
+        previmgVis.classList.add("hidden");
+        iItem.classList.remove("hidden");
     }
 }
