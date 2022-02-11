@@ -1,15 +1,17 @@
 //Arrowhead
 window.onload = () => {
     //detects stickyness
-    var observer = new IntersectionObserver(function (entries) {
+    const topRow = document.querySelector(".toprow");
+    var observer = new IntersectionObserver(entries => {
         if (entries[0].intersectionRatio === 0)
-            document.querySelector(".toprow").classList.add("fixedtopbar");
+            topRow.classList.add("fixedtopbar");
         else if (entries[0].intersectionRatio === 1)
-            document.querySelector(".toprow").classList.remove("fixedtopbar");
+            topRow.classList.remove("fixedtopbar");
     }, {
         threshold: [0, 1]
     });
     observer.observe(document.querySelector(".scroll"));
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
             e.preventDefault();
@@ -19,36 +21,48 @@ window.onload = () => {
         });
     });
     document.querySelectorAll(".previmg").forEach(e => e.addEventListener("click", () => zoomtoimg(e.src))); //previmgclick
-    const about = document.querySelector(".option[href*='#about']"), news = document.querySelector(".option[href*='#news']"), faq = document.querySelector(".option[href*='#faq']"), team = document.querySelector(".option[href*='#team']");
-    const cAbout = document.querySelector('#about'), cNews = document.querySelector('#news'), cFaq = document.querySelector('#faq'), cTeam = document.querySelector('#team');
 
-    window.addEventListener('scroll', () => {
+    const about = document.querySelector(".option[href*='#about']"),
+        news = document.querySelector(".option[href*='#news']"),
+        faq = document.querySelector(".option[href*='#faq']"),
+        team = document.querySelector(".option[href*='#team']");
+    const cAbout = document.querySelector('#about'),
+        cNews = document.querySelector('#news'),
+        cFaq = document.querySelector('#faq'),
+        cTeam = document.querySelector('#team');
+    var newsOTop = cNews.offsetTop,
+        faqOTop = cFaq.offsetTop,
+        teamOTop = cTeam.offsetTop;
+
+    window.addEventListener("resize", () => {
+        newsOTop = cNews.offsetTop;
+        faqOTop = cFaq.offsetTop;
+        teamOTop = cTeam.offsetTop;
+    });
+
+    window.addEventListener('scroll', e => {
+        e.preventDefault();
         const winScrolly = window.scrollY;
-        if (winScrolly >= cAbout.offsetTop && winScrolly < cNews.offsetTop) {
+        if (winScrolly >= cAbout.offsetTop && winScrolly < newsOTop) {
             about.classList.add("selected");
             news.classList.remove("selected");
             faq.classList.remove("selected");
             team.classList.remove("selected");
-        } else if (winScrolly >= cNews.offsetTop && winScrolly < cFaq.offsetTop) {
+        } else if (winScrolly >= newsOTop && winScrolly < faqOTop) {
             about.classList.remove("selected");
             news.classList.add("selected");
             faq.classList.remove("selected");
             team.classList.remove("selected");
-        } else if (winScrolly >= cFaq.offsetTop && winScrolly < cTeam.offsetTop) {
+        } else if (winScrolly >= faqOTop && winScrolly < teamOTop) {
             about.classList.remove("selected");
             news.classList.remove("selected");
             faq.classList.add("selected");
             team.classList.remove("selected");
-        } else if (winScrolly >= cTeam.offsetTop || winScrolly == window.pageYOffset) {
+        } else if (winScrolly >= teamOTop || winScrolly == window.pageYOffset) {
             about.classList.remove("selected");
             news.classList.remove("selected");
             faq.classList.remove("selected");
             team.classList.add("selected");
-        } else {
-            about.classList.add("selected");
-            news.classList.remove("selected");
-            faq.classList.remove("selected");
-            team.classList.remove("selected");
         }
     }, false);
 };
